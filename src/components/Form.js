@@ -10,7 +10,7 @@ export default function Form({ onAddMovie }) {
       <Input
         name="movieTitle"
         labelText="Movie:"
-        placeholder="Enter a new movie, e.g. 'Memoirs of a Geisha'"
+        placeholder=" Enter a new movie, e.g. 'Memoirs of a Geisha'"
       />
       <AddMovieButton>Add movie</AddMovieButton>
     </FormWrapper>

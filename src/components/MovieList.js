@@ -2,9 +2,9 @@ import styled from 'styled-components/macro'
 
 export default function MovieList({ movieTitle }) {
   return (
-    <MovieBorder>
+    <MovieBorder data-text="No movies here yet, add your own collection or maybe your Netflix watch list!">
       {movieTitle.map(movie => (
-        <MovieWrapper>{movie}</MovieWrapper>
+        <MovieWrapper>"{movie}"</MovieWrapper>
       ))}
     </MovieBorder>
   )
@@ -23,7 +23,21 @@ const MovieWrapper = styled.section`
 const MovieBorder = styled.div`
   border: 2px solid #7d84b2;
   border-radius: 8px;
-  margin: 5px;
+  margin: 15px;
   height: 300px;
   overflow-y: scroll;
+  position: relative;
+
+  &:empty:not(:focus):before {
+    content: attr(data-text);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ccc;
+    background: #eee;
+    border-radius: 8px;
+    padding: 20px;
+    position: absolute;
+    text-align: center;
+    top: 70px;
+    margin: 30px;
+  }
 `
