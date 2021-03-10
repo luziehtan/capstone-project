@@ -12,7 +12,7 @@ export default function Input({ labelText, placeholder, name }) {
 
 const Label = styled.label`
   display: grid;
-  gap: 4px;
+  gap: 2px;
 `
 const LabelInput = styled.input`
   border: 1px dashed #bbb;

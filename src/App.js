@@ -20,7 +20,7 @@ export default function App() {
     </div>
   )
 
-  function addMovie(newMovie) {
-    setMovies([newMovie, ...movies].sort())
+  function addMovie(newMovie, newFood) {
+    setMovies([{ movieTitle: newMovie, foodCategory: newFood }, ...movies])
   }
 }

@@ -9,7 +9,7 @@ describe('Form', () => {
     expect(screen.getByRole('button')).toBeInTheDocument()
   })
 
-  it('applies the movie title to the submit callback', () => {
+  it('applies the movie title and food category to the submit callback', () => {
     const callback = jest.fn()
     render(<Form onAddMovie={callback} />)
     userEvent.type(screen.getByLabelText('Movie:'), 'A Good Year')

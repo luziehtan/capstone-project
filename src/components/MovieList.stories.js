@@ -1,9 +1,12 @@
-import React from 'react'
-import MovieList from './MovieList.js'
+import MovieList from './MovieList'
 
 export default {
-  title: 'MovieList-Component',
+  title: 'MovieList',
   component: MovieList,
 }
 
-export const DefaultMovieList = () => <MovieList movies={['A Good Year']} />
+const Template = () => (
+  <MovieList movies={[{ movieTitle: 'A Good Year', foodCategory: 'French' }]} />
+)
+
+export const DefaultMovieList = Template.bind({})
