@@ -1,9 +1,9 @@
 import styled from 'styled-components/macro'
 
-export default function MovieList({ movieTitle }) {
+export default function MovieList({ movies }) {
   return (
     <MovieBorder data-text="No movies here yet, add your own collection or maybe your Netflix watch list!">
-      {movieTitle.map(movie => (
+      {movies.map(movie => (
         <MovieWrapper>"{movie}"</MovieWrapper>
       ))}
     </MovieBorder>

@@ -5,22 +5,22 @@ import loadFromLocalStorage from './lib/loadFromLocalStorage'
 import saveToLocalStorage from './lib/saveToLocalStorage'
 
 export default function App() {
-  const [movieTitle, setMovieTitle] = React.useState(
+  const [movies, setMovies] = React.useState(
     loadFromLocalStorage('movies') ?? []
   )
 
   React.useEffect(() => {
-    saveToLocalStorage('movies', movieTitle)
-  }, [movieTitle])
+    saveToLocalStorage('movies', movies)
+  }, [movies])
 
   return (
     <div>
       <Form onAddMovie={addMovie}></Form>
-      <MovieList movieTitle={movieTitle} />
+      <MovieList movies={movies} />
     </div>
   )
 
   function addMovie(newMovie) {
-    setMovieTitle([newMovie, ...movieTitle].sort())
+    setMovies([newMovie, ...movies].sort())
   }
 }
