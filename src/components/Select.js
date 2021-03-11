@@ -25,12 +25,14 @@ export default function Select({ labelText, name }) {
   return (
     <Label>
       {labelText}
-      <SelectInput name={name}>
-        <option value="" disabled selected hidden>
+      <SelectInput name={name} defaultValue={'default'}>
+        <option value="default" disabled hidden>
           Choose a matching food category
         </option>
         {options.map(option => (
-          <option value={option.value}>{option.label}</option>
+          <option key={option.label} value={option.value}>
+            {option.label}
+          </option>
         ))}
       </SelectInput>
     </Label>

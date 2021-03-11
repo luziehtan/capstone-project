@@ -6,8 +6,9 @@ export default function MovieList({ movies }) {
       {movies
         .sort((a, b) => a.movieTitle > b.movieTitle)
         .map(movie => (
-          <MovieWrapper>
-            {movie.movieTitle} <MovieFoodCat>{movie.foodCategory}</MovieFoodCat>
+          <MovieWrapper key={movie.movieTitle}>
+            <MovieTitle>{movie.movieTitle}</MovieTitle>{' '}
+            <MovieFoodCat>{movie.foodCategory}</MovieFoodCat>
           </MovieWrapper>
         ))}
     </MovieBorder>
@@ -25,6 +26,10 @@ const MovieWrapper = styled.section`
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
 `
+const MovieTitle = styled.span`
+  word-wrap: break-word;
+  width: 200px;
+`
 const MovieFoodCat = styled.span`
   position: absolute;
   background: rgba(125, 132, 178, 0.6);
@@ -33,6 +38,8 @@ const MovieFoodCat = styled.span`
   font-size: 0.8em;
   padding: 5px;
   right: 10px;
+  margin-left: 20px;
+  z-index: 1;
 `
 
 const MovieBorder = styled.div`
