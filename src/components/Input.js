@@ -1,11 +1,10 @@
-import React from 'react'
 import styled from 'styled-components/macro'
 
 export default function Input({ labelText, placeholder, name }) {
   return (
     <Label>
       {labelText}
-      <LabelInput name={name} placeholder={placeholder} type="text" />
+      <LabelInput required name={name} placeholder={placeholder} type="text" />
     </Label>
   )
 }

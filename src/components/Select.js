@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components/macro'
 
 export default function Select({ labelText, name }) {
@@ -25,7 +24,7 @@ export default function Select({ labelText, name }) {
   return (
     <Label>
       {labelText}
-      <SelectInput name={name} defaultValue={'default'}>
+      <SelectInput required name={name} defaultValue={'default'}>
         <option value="default" disabled hidden>
           Choose a matching food category
         </option>

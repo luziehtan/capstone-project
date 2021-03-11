@@ -1,4 +1,3 @@
-import React from 'react'
 import Input from './Input.js'
 import Select from './Select.js'
 import Button from './Button.js'
@@ -23,7 +22,10 @@ export default function Form({ onAddMovie }) {
     const form = event.target
     const { movieTitle, foodCategory } = form.elements
 
-    onAddMovie(movieTitle.value, foodCategory.value)
+    onAddMovie(
+      movieTitle.value.slice(0, 1).toUpperCase() + movieTitle.value.slice(1),
+      foodCategory.value
+    )
     form.reset()
     movieTitle.focus()
   }
