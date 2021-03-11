@@ -1,5 +1,5 @@
-import React from 'react'
 import Input from './Input.js'
+import Select from './Select.js'
 import Button from './Button.js'
 
 import styled from 'styled-components/macro'
@@ -12,6 +12,7 @@ export default function Form({ onAddMovie }) {
         labelText="Movie:"
         placeholder=" Enter a new movie, e.g. 'Memoirs of a Geisha'"
       />
+      <Select name="foodCategory" labelText="Food Category:" />
       <AddMovieButton>Add movie</AddMovieButton>
     </FormWrapper>
   )
@@ -19,9 +20,12 @@ export default function Form({ onAddMovie }) {
   function handleSubmit(event) {
     event.preventDefault()
     const form = event.target
-    const { movieTitle } = form.elements
+    const { movieTitle, foodCategory } = form.elements
 
-    onAddMovie(movieTitle.value)
+    onAddMovie(
+      movieTitle.value.slice(0, 1).toUpperCase() + movieTitle.value.slice(1),
+      foodCategory.value
+    )
     form.reset()
     movieTitle.focus()
   }

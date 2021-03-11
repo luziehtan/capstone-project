@@ -1,18 +1,23 @@
-import React from 'react'
 import styled from 'styled-components/macro'
 
 export default function Input({ labelText, placeholder, name }) {
   return (
     <Label>
       {labelText}
-      <LabelInput name={name} placeholder={placeholder} type="text" />
+      <LabelInput
+        required
+        name={name}
+        placeholder={placeholder}
+        type="text"
+        pattern="^(?!\s*$).+"
+      />
     </Label>
   )
 }
 
 const Label = styled.label`
   display: grid;
-  gap: 4px;
+  gap: 2px;
 `
 const LabelInput = styled.input`
   border: 1px dashed #bbb;
