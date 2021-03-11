@@ -44,4 +44,5 @@ const AddMovieButton = styled(Button)`
   background: #dbf4a7;
   color: black;
   border: 2px solid transparent;
+  font-size: 0.8em;
 `

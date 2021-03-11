@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 export default function MovieListPage({ movies }) {
   return (
     <div>
-      <Header />
+      <Header subtitle={'Your movie collection'} />
       <MovieList movies={movies} />
       <ButtonWrapper>
         <AddMovieButton as={Link} to="/">
@@ -21,7 +21,7 @@ export default function MovieListPage({ movies }) {
 
 const ButtonWrapper = styled.div`
   text-align: center;
-  margin-top: 20px;
+  margin-top: 35px;
 `
 
 const AddMovieButton = styled(Button)`
