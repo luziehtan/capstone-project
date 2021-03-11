@@ -4,7 +4,13 @@ export default function Input({ labelText, placeholder, name }) {
   return (
     <Label>
       {labelText}
-      <LabelInput required name={name} placeholder={placeholder} type="text" />
+      <LabelInput
+        required
+        name={name}
+        placeholder={placeholder}
+        type="text"
+        pattern="^(?!\s*$).+"
+      />
     </Label>
   )
 }
