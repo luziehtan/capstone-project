@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, useHistory } from 'react-router-dom'
 import MovieFormPage from './components/MovieFormPage'
 import MovieListPage from './components/MovieListPage'
 
@@ -10,6 +10,7 @@ export default function App() {
   const [movies, setMovies] = React.useState(
     loadFromLocalStorage('movies') ?? []
   )
+  const { push } = useHistory()
 
   React.useEffect(() => {
     saveToLocalStorage('movies', movies)
@@ -21,8 +22,6 @@ export default function App() {
         <Route exact path="/">
           <MovieFormPage onAddMovie={addMovie} />
         </Route>
-      </Switch>
-      <Switch>
         <Route path="/movielist">
           <MovieListPage movies={movies} />
         </Route>
@@ -32,5 +31,6 @@ export default function App() {
 
   function addMovie(newMovie, newFood) {
     setMovies([{ movieTitle: newMovie, foodCategory: newFood }, ...movies])
+    push('/movielist')
   }
 }

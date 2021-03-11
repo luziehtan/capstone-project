@@ -27,7 +27,6 @@ export default function Form({ onAddMovie }) {
       foodCategory.value
     )
     form.reset()
-    movieTitle.focus()
   }
 }
 
