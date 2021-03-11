@@ -1,6 +1,8 @@
 import React from 'react'
-import Form from './components/Form'
-import MovieList from './components/MovieList'
+import { Switch, Route } from 'react-router-dom'
+import MovieFormPage from './components/MovieFormPage'
+import MovieListPage from './components/MovieListPage'
+
 import loadFromLocalStorage from './lib/loadFromLocalStorage'
 import saveToLocalStorage from './lib/saveToLocalStorage'
 
@@ -15,8 +17,16 @@ export default function App() {
 
   return (
     <div>
-      <Form onAddMovie={addMovie}></Form>
-      <MovieList movies={movies} />
+      <Switch>
+        <Route exact path="/">
+          <MovieFormPage onAddMovie={addMovie} />
+        </Route>
+      </Switch>
+      <Switch>
+        <Route path="/movielist">
+          <MovieListPage movies={movies} />
+        </Route>
+      </Switch>
     </div>
   )
 
