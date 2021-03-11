@@ -8,7 +8,7 @@ export default function MovieList({ movies }) {
         .map(movie => (
           <MovieWrapper key={movie.movieTitle}>
             <MovieTitle>{movie.movieTitle}</MovieTitle>{' '}
-            <MovieFoodCat>{movie.foodCategory}</MovieFoodCat>
+            <FoodCategory>{movie.foodCategory}</FoodCategory>
           </MovieWrapper>
         ))}
     </MovieBorder>
@@ -30,7 +30,7 @@ const MovieTitle = styled.span`
   word-wrap: break-word;
   width: 200px;
 `
-const MovieFoodCat = styled.span`
+const FoodCategory = styled.span`
   position: absolute;
   background: rgba(125, 132, 178, 0.6);
   color: #5b639a;
