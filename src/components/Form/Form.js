@@ -1,6 +1,6 @@
-import Input from './Input.js'
-import Select from './Select.js'
-import Button from './Button.js'
+import Input from '../Input/Input.js'
+import Select from '../Select/Select.js'
+import Button from '../Button/Button.js'
 
 import styled from 'styled-components/macro'
 

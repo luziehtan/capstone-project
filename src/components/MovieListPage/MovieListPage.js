@@ -1,6 +1,6 @@
-import MovieList from './MovieList'
-import Header from './Header'
-import Button from './Button'
+import MovieList from '../MovieList/MovieList'
+import Header from '../Header/Header'
+import Button from '../Button/Button'
 import styled from 'styled-components/macro'
 
 import { Link } from 'react-router-dom'

@@ -1,7 +1,7 @@
 import React from 'react'
 import Form from './Form.js'
-import Input from './Input.js'
-import Button from './Button.js'
+import Input from '../Input/Input.js'
+import Button from '../Button/Button.js'
 
 export default {
   title: 'Form-Component',

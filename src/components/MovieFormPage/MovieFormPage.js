@@ -1,5 +1,5 @@
-import Form from './Form'
-import Header from './Header'
+import Form from '../Form/Form'
+import Header from '../Header/Header'
 
 export default function MovieFormPage({ onAddMovie }) {
   return (
