@@ -17,16 +17,14 @@ export default function App() {
   }, [movies])
 
   return (
-    <div>
-      <Switch>
-        <Route exact path="/">
-          <MovieFormPage onAddMovie={addMovie} />
-        </Route>
-        <Route path="/movielist">
-          <MovieListPage movies={movies} />
-        </Route>
-      </Switch>
-    </div>
+    <Switch>
+      <Route exact path="/">
+        <MovieFormPage onAddMovie={addMovie} />
+      </Route>
+      <Route path="/movielist">
+        <MovieListPage movies={movies} />
+      </Route>
+    </Switch>
   )
 
   function addMovie(newMovie, newFood) {

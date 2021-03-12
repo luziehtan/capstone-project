@@ -45,4 +45,5 @@ const AddMovieButton = styled(Button)`
   color: black;
   border: 2px solid transparent;
   font-size: 0.8em;
+  font-family: inherit;
 `

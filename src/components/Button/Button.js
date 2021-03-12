@@ -11,5 +11,5 @@ export default styled.button`
   background: #eee;
   width: 100%;
   cursor: pointer;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: inherit;
 `

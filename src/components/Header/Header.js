@@ -1,24 +1,24 @@
 import styled from 'styled-components/macro'
-import Logo from '../../images/eatnwatchlogo_new.png'
+import Logo from '../../images/eat-n-watch-logo.png'
 
 export default function Header({ subtitle }) {
   return (
     <HeaderWrapper>
       <HeaderLogo>
-        <img src={Logo} alt="eatnwatchlogo" width="200" height="58" />
+        <img src={Logo} alt="eatnwatchlogo" width="" height="60" />
       </HeaderLogo>
       <Subtitle>{subtitle}</Subtitle>
     </HeaderWrapper>
   )
 }
 
-const HeaderWrapper = styled.div`
+const HeaderWrapper = styled.header`
   border-radius: 8px;
   padding: 5px;
   margin-bottom: 10px;
 `
 
-const HeaderLogo = styled.section`
+const HeaderLogo = styled.div`
   text-align: center;
   padding: 10px;
   border-radius: 8px;
