@@ -1,11 +1,6 @@
 import styled from 'styled-components/macro'
 
-export default function Select({
-  labelText,
-  name,
-  foodCategoryValue,
-  showAllMovies,
-}) {
+export default function Select({ labelText, name, showAllMovies }) {
   const options = [
     { label: 'African', value: 'African' },
     { label: 'American', value: 'American' },
@@ -30,12 +25,7 @@ export default function Select({
   return (
     <Label>
       {labelText}
-      <SelectInput
-        onChange={handleChange}
-        required
-        name={name}
-        defaultValue={''}
-      >
+      <SelectInput required name={name} defaultValue={''}>
         <option value="" disabled hidden>
           Choose a matching food category
         </option>
@@ -52,10 +42,6 @@ export default function Select({
       </SelectInput>
     </Label>
   )
-
-  function handleChange(e) {
-    foodCategoryValue(e.target.value)
-  }
 }
 
 const Label = styled.label`
@@ -70,7 +56,7 @@ const Label = styled.label`
     font-size: 1.3em;
     color: black;
     right: 20px;
-    top: 32px;
+    bottom: 2px;
     padding: 0 0 2px;
     position: absolute;
     pointer-events: none;

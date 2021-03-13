@@ -21,7 +21,7 @@ export default function App() {
       <Route exact path="/">
         <MovieFormPage onAddMovie={addMovie} />
       </Route>
-      <Route path="/movielist">
+      <Route path="/movies">
         <MovieListPage movies={movies} />
       </Route>
     </Switch>
@@ -29,6 +29,6 @@ export default function App() {
 
   function addMovie(newMovie, newFood) {
     setMovies([{ movieTitle: newMovie, foodCategory: newFood }, ...movies])
-    push('/movielist')
+    push('/movies')
   }
 }

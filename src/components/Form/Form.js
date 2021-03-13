@@ -4,7 +4,7 @@ import Button from '../Button/Button.js'
 
 import styled from 'styled-components/macro'
 
-export default function Form({ onAddMovie }) {
+export default function Form({ onAddMovie, foodCategoryValue }) {
   return (
     <FormWrapper onSubmit={handleSubmit}>
       <Input
@@ -12,7 +12,12 @@ export default function Form({ onAddMovie }) {
         labelText="Movie:"
         placeholder=" Enter a new movie, e.g. 'Memoirs of a Geisha'"
       />
-      <Select name="foodCategory" labelText="Food Category:" />
+      <Select
+        returnValue="true"
+        foodCategoryValue={foodCategoryValue}
+        name="foodCategory"
+        labelText="Food Category:"
+      />
       <AddMovieButton>Add movie</AddMovieButton>
     </FormWrapper>
   )

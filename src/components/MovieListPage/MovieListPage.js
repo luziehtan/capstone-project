@@ -7,13 +7,15 @@ import styled from 'styled-components/macro'
 
 import { Link } from 'react-router-dom'
 
-export default function MovieListPage({ movies }) {
+export default function MovieListPage({ movies, foodCategoryValue }) {
   const [filteredMovies, setFilteredMovies] = React.useState(movies)
 
   return (
     <div>
       <Header subtitle={'Your movie collection'} />
-      <Select foodCategoryValue={filterMovies} showAllMovies="true" />
+      <form onChange={handleChange}>
+        <Select foodCategoryValue={filterMovies} showAllMovies="true" />
+      </form>
       <MovieList movies={filteredMovies} />
       <ButtonWrapper>
         <AddMovieButton as={Link} to="/">
@@ -22,6 +24,11 @@ export default function MovieListPage({ movies }) {
       </ButtonWrapper>
     </div>
   )
+
+  function handleChange(e) {
+    const selectedCategory = e.target.selectedOptions[0].value
+    filterMovies(selectedCategory)
+  }
 
   function filterMovies(value) {
     setFilteredMovies(
