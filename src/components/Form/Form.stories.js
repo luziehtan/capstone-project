@@ -4,7 +4,7 @@ import Input from '../Input/Input.js'
 import Button from '../Button/Button.js'
 
 export default {
-  title: 'Form-Component',
+  title: 'Form',
   component: Form,
 }
 

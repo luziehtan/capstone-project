@@ -2,7 +2,7 @@ import React from 'react'
 import Input from './Input.js'
 
 export default {
-  title: 'Input-Component',
+  title: 'Input',
   component: Input,
 }
 
