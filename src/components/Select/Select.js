@@ -1,6 +1,11 @@
 import styled from 'styled-components/macro'
 
-export default function Select({ labelText, name }) {
+export default function Select({
+  labelText,
+  name,
+  foodCategoryValue,
+  showAllMovies,
+}) {
   const options = [
     { label: 'African', value: 'African' },
     { label: 'American', value: 'American' },
@@ -21,13 +26,24 @@ export default function Select({ labelText, name }) {
     { label: 'Sushi', value: 'Sushi' },
     { label: 'Swiss', value: 'Swiss' },
   ]
+
   return (
     <Label>
       {labelText}
-      <SelectInput required name={name} defaultValue={''}>
+      <SelectInput
+        onChange={handleChange}
+        required
+        name={name}
+        defaultValue={''}
+      >
         <option value="" disabled hidden>
           Choose a matching food category
         </option>
+        {showAllMovies && (
+          <option key="allmovies" value="all">
+            Show all
+          </option>
+        )}
         {options.map(option => (
           <option key={option.label} value={option.value}>
             {option.label}
@@ -36,6 +52,10 @@ export default function Select({ labelText, name }) {
       </SelectInput>
     </Label>
   )
+
+  function handleChange(e) {
+    foodCategoryValue(e.target.value)
+  }
 }
 
 const Label = styled.label`
