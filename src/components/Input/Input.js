@@ -10,6 +10,7 @@ export default function Input({ labelText, placeholder, name }) {
         placeholder={placeholder}
         type="text"
         pattern="^(?!\s*$).+"
+        maxLength="200"
       />
     </Label>
   )

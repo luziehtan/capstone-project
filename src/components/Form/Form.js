@@ -1,6 +1,6 @@
-import Input from './Input.js'
-import Select from './Select.js'
-import Button from './Button.js'
+import Input from '../Input/Input.js'
+import Select from '../Select/Select.js'
+import Button from '../Button/Button.js'
 
 import styled from 'styled-components/macro'
 
@@ -27,7 +27,6 @@ export default function Form({ onAddMovie }) {
       foodCategory.value
     )
     form.reset()
-    movieTitle.focus()
   }
 }
 
@@ -45,4 +44,6 @@ const AddMovieButton = styled(Button)`
   background: #dbf4a7;
   color: black;
   border: 2px solid transparent;
+  font-size: 0.8em;
+  font-family: inherit;
 `

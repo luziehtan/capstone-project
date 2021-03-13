@@ -24,8 +24,8 @@ export default function Select({ labelText, name }) {
   return (
     <Label>
       {labelText}
-      <SelectInput required name={name} defaultValue={'default'}>
-        <option value="default" disabled hidden>
+      <SelectInput required name={name} defaultValue={''}>
+        <option value="" disabled hidden>
           Choose a matching food category
         </option>
         {options.map(option => (
@@ -45,10 +45,10 @@ const Label = styled.label`
   position: relative;
 
   &:after {
-    content: '...';
+    content: '▾';
     font-family: Consolas;
     font-size: 1.3em;
-    color: #666;
+    color: black;
     right: 20px;
     top: 32px;
     padding: 0 0 2px;
@@ -65,4 +65,5 @@ const SelectInput = styled.select`
   font-size: 0.8em;
   cursor: pointer;
   appearance: none;
+  background: white;
 `
