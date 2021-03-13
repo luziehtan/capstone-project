@@ -28,7 +28,12 @@ export default function App() {
   )
 
   function addMovie(newMovie, newFood) {
-    setMovies([{ movieTitle: newMovie, foodCategory: newFood }, ...movies])
+    const isMovieInState = movies.some(
+      movie => movie['movieTitle'] === newMovie
+    )
+
+    !isMovieInState &&
+      setMovies([{ movieTitle: newMovie, foodCategory: newFood }, ...movies])
     push('/movies')
   }
 }
