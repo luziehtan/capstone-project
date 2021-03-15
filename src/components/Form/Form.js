@@ -17,6 +17,7 @@ export default function Form({ onAddMovie, foodCategoryValue }) {
         foodCategoryValue={foodCategoryValue}
         name="foodCategory"
         labelText="Food Category:"
+        optionText={'Choose a matching food category, e.g. Sushi'}
       />
       <AddMovieButton>Add movie</AddMovieButton>
     </FormWrapper>
