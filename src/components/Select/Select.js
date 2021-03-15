@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 
-export default function Select({ labelText, name }) {
+export default function Select({ labelText, name, showAllMovies }) {
   const options = [
     { label: 'African', value: 'African' },
     { label: 'American', value: 'American' },
@@ -21,6 +21,7 @@ export default function Select({ labelText, name }) {
     { label: 'Sushi', value: 'Sushi' },
     { label: 'Swiss', value: 'Swiss' },
   ]
+
   return (
     <Label>
       {labelText}
@@ -28,6 +29,11 @@ export default function Select({ labelText, name }) {
         <option value="" disabled hidden>
           Choose a matching food category
         </option>
+        {showAllMovies && (
+          <option key="allmovies" value="all">
+            Show all
+          </option>
+        )}
         {options.map(option => (
           <option key={option.label} value={option.value}>
             {option.label}
@@ -50,7 +56,7 @@ const Label = styled.label`
     font-size: 1.3em;
     color: black;
     right: 20px;
-    top: 32px;
+    bottom: 2px;
     padding: 0 0 2px;
     position: absolute;
     pointer-events: none;

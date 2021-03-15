@@ -28,7 +28,7 @@ const Subtitle = styled.div`
   text-align: center;
   font-size: 1em;
   font-family: 'Exo 2', sans-serif;
-  background: #eee;
+  background: #8fa6cb;
   border-radius: 8px;
   padding: 5px;
 `
