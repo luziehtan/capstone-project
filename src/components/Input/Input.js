@@ -27,4 +27,10 @@ const LabelInput = styled.input`
   width: 100%;
   height: 30px;
   font-size: 0.8em;
+
+  &input[type='text'] {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
 `

@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import MovieList from '../MovieList/MovieList'
 import Header from '../Header/Header'
 import Button from '../Button/Button'
@@ -8,7 +8,7 @@ import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 
 export default function MovieListPage({ movies, foodCategoryValue }) {
-  const [filteredMovies, setFilteredMovies] = React.useState(movies)
+  const [filteredMovies, setFilteredMovies] = useState(movies)
 
   return (
     <div>

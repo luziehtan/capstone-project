@@ -1,4 +1,4 @@
-import React from 'react'
+import { React, useState } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
 import MovieFormPage from './components/MovieFormPage/MovieFormPage'
 import MovieListPage from './components/MovieListPage/MovieListPage'
@@ -7,9 +7,7 @@ import loadFromLocalStorage from './lib/loadFromLocalStorage'
 import saveToLocalStorage from './lib/saveToLocalStorage'
 
 export default function App() {
-  const [movies, setMovies] = React.useState(
-    loadFromLocalStorage('movies') ?? []
-  )
+  const [movies, setMovies] = useState(loadFromLocalStorage('movies') ?? [])
   const { push } = useHistory()
 
   React.useEffect(() => {
