@@ -1,5 +1,9 @@
-import { React, useState } from 'react'
+import React from 'react'
+import { useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast'
+import { toast } from 'react-hot-toast'
+
 import MovieFormPage from './components/MovieFormPage/MovieFormPage'
 import MovieListPage from './components/MovieListPage/MovieListPage'
 
@@ -10,13 +14,14 @@ export default function App() {
   const [movies, setMovies] = useState(loadFromLocalStorage('movies') ?? [])
   const { push } = useHistory()
 
-  React.useEffect(() => {
+  useEffect(() => {
     saveToLocalStorage('movies', movies)
   }, [movies])
 
   return (
     <Switch>
       <Route exact path="/">
+        <Toaster />
         <MovieFormPage onAddMovie={addMovie} />
       </Route>
       <Route path="/movies">
@@ -30,8 +35,18 @@ export default function App() {
       movie => movie['movieTitle'] === newMovie
     )
 
-    !isMovieInState &&
+    if (!isMovieInState === false) {
+      toast.error('This movie is already in your list!', {
+        style: {
+          reverseOrder: false,
+          position: 'top-center',
+          border: '1px solid black',
+        },
+      })
+      push('/')
+    } else {
       setMovies([{ movieTitle: newMovie, foodCategory: newFood }, ...movies])
-    push('/movies')
+      push('/movies')
+    }
   }
 }
