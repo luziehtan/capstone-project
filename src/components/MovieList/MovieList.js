@@ -49,7 +49,7 @@ export const MovieBorder = styled.div`
   border: 2px solid #7d84b2;
   border-radius: 8px;
   margin: 15px;
-  height: ${props => (props.borderHeight ? '300px' : '168px')};
+  height: ${props => (props.borderHeight ? '300px' : '200px')};
   overflow-y: scroll;
   position: relative;
 
