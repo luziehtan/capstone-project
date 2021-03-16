@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import styled from 'styled-components/macro'
 
 import Header from '../Header/Header'
 import MovieList from '../MovieList/MovieList'
@@ -11,7 +12,11 @@ export default function Suggestions({ filteredMovies, borderHeight }) {
     <div>
       <Header subtitle={'Try these movies and enjoy your meal!'} />
       <MovieList borderHeight={borderHeight} movies={suggestions} />
-      <Button onClick={() => setSuggestions(movieRandomizer())}>Again!</Button>
+      <ButtonWrapper>
+        <AgainButton onClick={() => setSuggestions(movieRandomizer())}>
+          Again!
+        </AgainButton>
+      </ButtonWrapper>
     </div>
   )
 
@@ -21,3 +26,17 @@ export default function Suggestions({ filteredMovies, borderHeight }) {
     return suggestions
   }
 }
+
+const ButtonWrapper = styled.div`
+  position: fixed;
+  bottom: 245px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+`
+const AgainButton = styled(Button)`
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8em;
+  background: #dbf4a7;
+  width: 50%;
+`

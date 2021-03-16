@@ -134,13 +134,13 @@ const PlayIcon = styled.div`
     position: relative;
     bottom: -30px;
     display: block;
-    transform: scale(var(--ggs, 3));
+    transform: scale(var(--ggs, 4));
     width: 22px;
     height: 22px;
-    border: 2px solid #dbf4a7;
+    border: 1px solid #dbf4a7;
     border-radius: 4px;
   }
-  &.gg-play-button-r::before {
+  &.gg-play-button-r::after {
     content: '';
     color: #7d84b2;
     display: block;
@@ -151,7 +151,19 @@ const PlayIcon = styled.div`
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
     border-left: 6px solid;
-    top: 4px;
-    left: 7px;
+    top: 5px;
+    left: 8px;
+  }
+  &.gg-play-button-r::before {
+    box-sizing: border-box;
+    display: block;
+    transform: scale(var(--ggs, 0.9));
+    width: 20px;
+    height: 20px;
+    border: 1px solid #8fa6cb;
+    border-radius: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 `

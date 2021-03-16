@@ -50,7 +50,6 @@ export default function App() {
   }
 
   function filterMovies(value) {
-    console.log(value)
     setFilteredMovies(
       value === 'all'
         ? movies
