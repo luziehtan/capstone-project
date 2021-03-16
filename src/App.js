@@ -36,7 +36,7 @@ export default function App() {
       </Route>
       <Route path="/movies">
         <MovieListPage
-          movies={movies}
+          filteredMovies={filteredMovies}
           onHandleChange={handleChange}
           onFilterMovies={filterMovies}
         />

@@ -23,7 +23,7 @@ export default function MovieListPage({
       </form>
       <MovieList movies={filteredMovies} borderHeight={300} />
       <ButtonWrapper>
-        <AddMovieButton as={Link} to="/">
+        <AddMovieButton as={Link} to="/addmovie">
           Add new movie to your collection
         </AddMovieButton>
       </ButtonWrapper>
