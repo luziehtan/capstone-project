@@ -28,7 +28,7 @@ export default function MainPage({ onFilterMovies, onHandleChange }) {
           </PlayButton>
         </FoodSelectForm>
       </FoodSelectWrapper>
-      <ButtonText>I need some help, please!</ButtonText>
+      <ButtonText>I'm hungry and need some help, please!</ButtonText>
       <ShowTextButton
         title={isTextVisible ? 'Hide Details' : 'Show Details'}
         onClick={() => setIsTextVisible(!isTextVisible)}
@@ -36,7 +36,7 @@ export default function MainPage({ onFilterMovies, onHandleChange }) {
         <BotIcon className="gg-bot" />
       </ShowTextButton>
       <Text hidden={!isTextVisible}>
-        <strong>Hello Hungry - I'm eat'n'watch!</strong>
+        <strong>Hi Hungry - I'm eat'n'watch!</strong>
         <br />
         <br />
         I'm here to help you choose the perfect movie to accompany whatever food
