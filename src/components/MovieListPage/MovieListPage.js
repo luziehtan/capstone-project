@@ -12,7 +12,7 @@ export default function MovieListPage({
   filteredMovies,
 }) {
   return (
-    <div>
+    <>
       <Header subtitle={'Your movie collection'} />
       <form onChange={onHandleChange}>
         <Select
@@ -27,7 +27,7 @@ export default function MovieListPage({
           Add new movie to your collection
         </AddMovieButton>
       </ButtonWrapper>
-    </div>
+    </>
   )
 }
 

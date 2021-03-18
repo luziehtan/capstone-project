@@ -9,7 +9,7 @@ export default function Suggestions({ filteredMovies, borderHeight }) {
   const [suggestions, setSuggestions] = useState(movieRandomizer())
 
   return (
-    <div>
+    <>
       <Header subtitle={'Try these movies and enjoy your meal!'} />
       <MovieList borderHeight={borderHeight} movies={suggestions} />
       <ButtonWrapper>
@@ -17,7 +17,7 @@ export default function Suggestions({ filteredMovies, borderHeight }) {
           Again!
         </AgainButton>
       </ButtonWrapper>
-    </div>
+    </>
   )
 
   function movieRandomizer() {

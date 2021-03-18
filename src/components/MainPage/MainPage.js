@@ -13,7 +13,7 @@ export default function MainPage({ onFilterMovies, onHandleChange }) {
   const [isTextVisible, setIsTextVisible] = useState(false)
 
   return (
-    <div>
+    <>
       <Header subtitle={'Which movie should you watch now?'} />
       <FoodSelectWrapper>
         <FoodSelectForm onChange={onHandleChange} showAllMovies="false">
@@ -45,7 +45,7 @@ export default function MainPage({ onFilterMovies, onHandleChange }) {
         Choose a food category from the list above and I'll show you some movies
         that will match your plate!
       </Text>
-    </div>
+    </>
   )
 }
 

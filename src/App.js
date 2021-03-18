@@ -38,6 +38,7 @@ export default function App() {
         <MovieFormPage onAddMovie={addMovie} />
       </Route>
       <Route path="/movies">
+        <Toaster />
         <MovieListPage
           filteredMovies={filteredMovies}
           onHandleChange={changeCategory}
@@ -62,12 +63,23 @@ export default function App() {
           reverseOrder: false,
           position: 'top-center',
           border: '1px solid black',
+          marginTop: '130px',
+          fontFamily: 'Arial',
         },
       })
       push('/addmovie')
     } else {
       setMovies([{ movieTitle: newMovie, foodCategory: newFood }, ...movies])
       push('/movies')
+      toast.success('Movie added to your list!', {
+        style: {
+          reverseOrder: false,
+          position: 'top-center',
+          border: '1px solid black',
+          marginTop: '325px',
+          fontFamily: 'Arial',
+        },
+      })
     }
   }
 }
