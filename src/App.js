@@ -14,7 +14,7 @@ import saveToLocalStorage from './lib/saveToLocalStorage'
 
 export default function App() {
   const [movies, setMovies] = useState(loadFromLocalStorage('movies') ?? [])
-  const [filteredMovies, setFilteredMovies] = useState(movies)
+  const filteredMovies = movies.filter(movie => movie.foodCategory === value)
 
   const { push } = useHistory()
 
