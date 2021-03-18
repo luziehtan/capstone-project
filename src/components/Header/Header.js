@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro'
-import Logo from '../../images/eat-n-watch-logo.png'
+import Logo from '../../images/eat-n-watch-logo-new.png'
 
 export default function Header({ subtitle }) {
   return (
