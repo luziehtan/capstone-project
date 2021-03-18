@@ -14,7 +14,10 @@ import saveToLocalStorage from './lib/saveToLocalStorage'
 
 export default function App() {
   const [movies, setMovies] = useState(loadFromLocalStorage('movies') ?? [])
-  const filteredMovies = movies.filter(movie => movie.foodCategory === value)
+  const [category, setCategory] = useState(null)
+  const filteredMovies = movies.filter(
+    movie => category === 'all' || !category || movie.foodCategory === category
+  )
 
   const { push } = useHistory()
 
@@ -25,7 +28,7 @@ export default function App() {
   return (
     <Switch>
       <Route exact path="/">
-        <MainPage onHandleChange={handleChange} />
+        <MainPage onHandleChange={changeCategory} />
       </Route>
       <Route path="/suggestions">
         <Suggestions filteredMovies={filteredMovies} />
@@ -37,24 +40,15 @@ export default function App() {
       <Route path="/movies">
         <MovieListPage
           filteredMovies={filteredMovies}
-          onHandleChange={handleChange}
-          onFilterMovies={filterMovies}
+          onHandleChange={changeCategory}
         />
       </Route>
     </Switch>
   )
 
-  function handleChange(e) {
+  function changeCategory(e) {
     const selectedCategory = e.target.selectedOptions[0].value
-    filterMovies(selectedCategory)
-  }
-
-  function filterMovies(value) {
-    setFilteredMovies(
-      value === 'all'
-        ? movies
-        : movies.filter(movie => movie.foodCategory === value)
-    )
+    setCategory(selectedCategory)
   }
 
   function addMovie(newMovie, newFood) {
