@@ -55,7 +55,7 @@ const FoodSelectWrapper = styled.div`
 `
 const FoodSelectForm = styled.form`
   position: absolute;
-  left: 30px;
+  left: 35px;
   width: 80%;
 `
 const PlayButton = styled(Button)`
