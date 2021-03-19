@@ -68,7 +68,6 @@ const SelectInput = styled.select`
   margin-top: 8px;
   width: 100%;
   height: 33px;
-  font-size: 0.8em;
   cursor: pointer;
   appearance: none;
   background: white;

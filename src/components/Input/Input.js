@@ -26,7 +26,6 @@ const LabelInput = styled.input`
   margin-top: 8px;
   width: 100%;
   height: 30px;
-  font-size: 0.8em;
 
   &input[type='text'] {
     -moz-box-sizing: border-box;
