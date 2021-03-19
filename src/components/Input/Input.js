@@ -24,8 +24,9 @@ const LabelInput = styled.input`
   border: 1px dashed #bbb;
   border-radius: 8px;
   margin-top: 8px;
-  width: 100%;
   height: 30px;
+  outline: none;
+  padding-left: 10px;
 
   &input[type='text'] {
     -moz-box-sizing: border-box;
