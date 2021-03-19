@@ -56,6 +56,7 @@ export default function App() {
     const isMovieInState = movies.some(
       movie => movie['movieTitle'] === newMovie
     )
+    setCategory('all')
 
     if (!isMovieInState === false) {
       toast.error('This movie is already in your list!', {
