@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import MovieList from '../MovieList/MovieList'
 import Header from '../Header/Header'
 import Button from '../Button/Button'
@@ -7,36 +6,29 @@ import styled from 'styled-components/macro'
 
 import { Link } from 'react-router-dom'
 
-export default function MovieListPage({ movies, foodCategoryValue }) {
-  const [filteredMovies, setFilteredMovies] = useState(movies)
-
+export default function MovieListPage({
+  onHandleChange,
+  onFilterMovies,
+  filteredMovies,
+}) {
   return (
-    <div>
+    <>
       <Header subtitle={'Your movie collection'} />
-      <form onChange={handleChange}>
-        <Select foodCategoryValue={filterMovies} showAllMovies="true" />
+      <form onChange={onHandleChange}>
+        <Select
+          foodCategoryValue={onFilterMovies}
+          showAllMovies="true"
+          optionText={'Choose the food category'}
+        />
       </form>
-      <MovieList movies={filteredMovies} />
+      <MovieList movies={filteredMovies} borderHeight={300} />
       <ButtonWrapper>
-        <AddMovieButton as={Link} to="/">
+        <AddMovieButton as={Link} to="/addmovie">
           Add new movie to your collection
         </AddMovieButton>
       </ButtonWrapper>
-    </div>
+    </>
   )
-
-  function handleChange(e) {
-    const selectedCategory = e.target.selectedOptions[0].value
-    filterMovies(selectedCategory)
-  }
-
-  function filterMovies(value) {
-    setFilteredMovies(
-      value === 'all'
-        ? movies
-        : movies.filter(movie => movie.foodCategory === value)
-    )
-  }
 }
 
 const ButtonWrapper = styled.div`

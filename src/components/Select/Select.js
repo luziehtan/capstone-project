@@ -1,7 +1,8 @@
 import styled from 'styled-components/macro'
 
-export default function Select({ labelText, name, showAllMovies }) {
+export default function Select({ labelText, optionText, name, showAllMovies }) {
   const options = [
+    { label: '🍿 Popcorn -- just snacking!', value: '🍿 Popcorn' },
     { label: 'African', value: 'African' },
     { label: 'American', value: 'American' },
     { label: 'Arabic', value: 'Arabic' },
@@ -16,7 +17,6 @@ export default function Select({ labelText, name, showAllMovies }) {
     { label: 'Indian', value: 'Indian' },
     { label: 'Italian', value: 'Italian' },
     { label: 'Mexican', value: 'Mexican' },
-    { label: '🍿 Popcorn -- just snacking!', value: '🍿 Popcorn' },
     { label: 'Russian', value: 'Russian' },
     { label: 'Sushi', value: 'Sushi' },
     { label: 'Swiss', value: 'Swiss' },
@@ -27,7 +27,7 @@ export default function Select({ labelText, name, showAllMovies }) {
       {labelText}
       <SelectInput required name={name} defaultValue={''}>
         <option value="" disabled hidden>
-          Choose a matching food category
+          {optionText}
         </option>
         {showAllMovies && (
           <option key="allmovies" value="all">
@@ -68,7 +68,6 @@ const SelectInput = styled.select`
   margin-top: 8px;
   width: 100%;
   height: 33px;
-  font-size: 0.8em;
   cursor: pointer;
   appearance: none;
   background: white;

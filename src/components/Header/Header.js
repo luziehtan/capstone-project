@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro'
-import Logo from '../../images/eat-n-watch-logo.png'
+import Logo from '../../images/eat-n-watch-logo-new.png'
 
 export default function Header({ subtitle }) {
   return (
@@ -28,7 +28,7 @@ const Subtitle = styled.div`
   text-align: center;
   font-size: 1em;
   font-family: 'Exo 2', sans-serif;
-  background: #8fa6cb;
-  border-radius: 8px;
+  background: rgba(143, 166, 203, 0.3);
+  border-radius: 3px;
   padding: 5px;
 `
