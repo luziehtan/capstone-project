@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import { toast } from 'react-hot-toast'
@@ -9,21 +9,16 @@ import MovieFormPage from './components/MovieFormPage/MovieFormPage'
 import MovieListPage from './components/MovieListPage/MovieListPage'
 import Suggestions from './components/Suggestions/Suggestions'
 
-import loadFromLocalStorage from './lib/loadFromLocalStorage'
-import saveToLocalStorage from './lib/saveToLocalStorage'
+import useLocalStorage from './hooks/useLocalStorage'
 
 export default function App() {
-  const [movies, setMovies] = useState(loadFromLocalStorage('movies') ?? [])
+  const [movies, setMovies] = useLocalStorage('movies', [])
   const [category, setCategory] = useState(null)
   const filteredMovies = movies.filter(
     movie => category === 'all' || !category || movie.foodCategory === category
   )
 
   const { push } = useHistory()
-
-  useEffect(() => {
-    saveToLocalStorage('movies', movies)
-  }, [movies])
 
   return (
     <Switch>
