@@ -27,10 +27,5 @@ const LabelInput = styled.input`
   height: 30px;
   outline: none;
   padding-left: 10px;
-
-  &input[type='text'] {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
+  font-size: 0.65em;
 `

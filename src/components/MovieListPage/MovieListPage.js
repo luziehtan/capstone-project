@@ -14,13 +14,13 @@ export default function MovieListPage({
   return (
     <>
       <Header subtitle={'Your movie collection'} />
-      <form onChange={onHandleChange}>
+      <CategorySelect onChange={onHandleChange}>
         <Select
           foodCategoryValue={onFilterMovies}
           showAllMovies="true"
           optionText={'Choose the food category'}
         />
-      </form>
+      </CategorySelect>
       <MovieList movies={filteredMovies} borderHeight={300} />
       <ButtonWrapper>
         <AddMovieButton as={Link} to="/addmovie">
@@ -46,4 +46,8 @@ const AddMovieButton = styled(Button)`
   text-decoration: none;
   border: 2px solid transparent;
   width: 100%;
+`
+
+const CategorySelect = styled.form`
+  margin: 15px;
 `

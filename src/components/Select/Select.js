@@ -47,7 +47,6 @@ export default function Select({ labelText, optionText, name, showAllMovies }) {
 const Label = styled.label`
   display: grid;
   gap: 2px;
-  margin-top: 10px;
   position: relative;
 
   &:after {

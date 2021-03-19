@@ -10,9 +10,9 @@ export default function Form({ onAddMovie, foodCategoryValue }) {
       <Input
         name="movieTitle"
         labelText="Movie:"
-        placeholder=" Enter a new movie, e.g. 'Memoirs of a Geisha'"
+        placeholder="Enter a new movie, e.g. 'Memoirs of a Geisha'"
       />
-      <Select
+      <SelectCategory
         returnValue="true"
         foodCategoryValue={foodCategoryValue}
         name="foodCategory"
@@ -45,6 +45,7 @@ const FormWrapper = styled.form`
   padding: 15px;
   border-radius: 8px;
   font-family: Arial;
+  margin: 15px;
 `
 
 const AddMovieButton = styled(Button)`
@@ -53,4 +54,7 @@ const AddMovieButton = styled(Button)`
   border: 2px solid transparent;
   font-size: 0.8em;
   font-family: inherit;
+`
+const SelectCategory = styled(Select)`
+  width: 100%;
 `
