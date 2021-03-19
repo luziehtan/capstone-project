@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
+
+import useToggle from '../../hooks/useToggle'
 
 import 'css.gg/icons/css/play-button-r.css'
 import 'css.gg/icons/css/bot.css'
@@ -10,7 +11,7 @@ import Select from '../Select/Select'
 import Button from '../Button/Button'
 
 export default function MainPage({ onFilterMovies, onHandleChange }) {
-  const [isTextVisible, setIsTextVisible] = useState(false)
+  const [isVisible, toggleVisible] = useToggle(false)
 
   return (
     <>
@@ -30,12 +31,12 @@ export default function MainPage({ onFilterMovies, onHandleChange }) {
       </FoodSelectWrapper>
       <ButtonText>I'm hungry and need some help, please!</ButtonText>
       <ShowTextButton
-        title={isTextVisible ? 'Hide Details' : 'Show Details'}
-        onClick={() => setIsTextVisible(!isTextVisible)}
+        title={isVisible ? 'Hide Details' : 'Show Details'}
+        onClick={toggleVisible}
       >
         <BotIcon className="gg-bot" />
       </ShowTextButton>
-      <Text hidden={!isTextVisible}>
+      <Text hidden={!isVisible}>
         <strong>Hi Hungry - I'm eat'n'watch!</strong>
         <br />
         <br />

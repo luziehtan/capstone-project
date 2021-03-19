@@ -11,7 +11,3 @@ export default function useLocalStorage(key, initialData) {
 
   return [data, setData]
 }
-
-// In App.js:
-
-// const [movies, setMovies] = useLocalStorage('movies', [])
