@@ -18,13 +18,13 @@ export default function Input({ labelText, placeholder, name }) {
 
 const Label = styled.label`
   display: grid;
-  gap: 2px;
+  gap: 5px;
 `
 const LabelInput = styled.input`
   border: 1px dashed #bbb;
   border-radius: 8px;
   margin-top: 8px;
-  height: 30px;
+  height: 33px;
   outline: none;
   padding-left: 10px;
   font-size: 0.65em;

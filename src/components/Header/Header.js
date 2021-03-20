@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro'
-import Logo from '../../images/eat-n-watch-logo-new.png'
+import Logo from '../../images/eatnwatchlogo.png'
 
 export default function Header({ subtitle }) {
   return (
@@ -31,4 +31,5 @@ const Subtitle = styled.div`
   background: rgba(143, 166, 203, 0.3);
   border-radius: 3px;
   padding: 5px;
+  margin: 0 12px;
 `

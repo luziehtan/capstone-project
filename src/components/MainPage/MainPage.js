@@ -52,6 +52,7 @@ export default function MainPage({ onFilterMovies, onHandleChange }) {
 
 const FoodSelectWrapper = styled.div`
   position: relative;
+  top: 60px;
   text-align: center;
 `
 const FoodSelectForm = styled.form`
@@ -64,8 +65,8 @@ const PlayButton = styled(Button)`
 `
 const ShowTextButton = styled(Button)`
   position: relative;
-  top: 180px;
-  left: 22px;
+  top: 410px;
+  left: 30px;
   background: #d5f9de;
   border: 1px dashed black;
   height: 30px;
@@ -75,14 +76,14 @@ const ShowTextButton = styled(Button)`
 `
 const ButtonText = styled.span`
   position: absolute;
-  top: 333px;
+  bottom: 94px;
   left: 70px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 0.6em;
 `
 const Text = styled.div`
   position: absolute;
-  top: 330px;
+  bottom: 95px;
   left: 0;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
@@ -90,7 +91,7 @@ const Text = styled.div`
   background: #d5f9de;
   padding: 20px;
   margin: 0 40px;
-  border: 2px solid #8aa399;
+  border: 1px solid #8aa399;
   border-radius: 8px;
 `
 const BotIcon = styled.div`
@@ -140,6 +141,8 @@ const PlayIcon = styled.div`
     height: 22px;
     border: 1px solid #dbf4a7;
     border-radius: 4px;
+    background: white;
+    filter: drop-shadow(0 0 0.1rem #dbf4a7);
   }
   &.gg-play-button-r::after {
     content: '';
@@ -166,5 +169,6 @@ const PlayIcon = styled.div`
     position: absolute;
     top: 0;
     left: 0;
+    filter: drop-shadow(0 0 0.005rem #8fa6cb);
   }
 `

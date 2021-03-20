@@ -11,12 +11,12 @@ export default function Suggestions({ filteredMovies, borderHeight }) {
   return (
     <>
       <Header subtitle={'Try these movies and enjoy your meal!'} />
-      <MovieList borderHeight={borderHeight} movies={suggestions} />
       <ButtonWrapper>
         <AgainButton onClick={() => setSuggestions(movieRandomizer())}>
           Again!
         </AgainButton>
       </ButtonWrapper>
+      <MovieList borderHeight={borderHeight} movies={suggestions} />
     </>
   )
 
@@ -25,18 +25,37 @@ export default function Suggestions({ filteredMovies, borderHeight }) {
     let suggestions = randomMovies.slice(0, 3)
     return suggestions
   }
+
+  // function noMoviesHere() {
+  //  if (filteredMovies.length === 0) {
+  //    return (
+  //      <NoMovies data-text="Sorry, you haven't added any movies in this category yet!" />
+  //    )
+  //  }
+  // }
 }
 
 const ButtonWrapper = styled.div`
-  position: fixed;
-  bottom: 245px;
   display: flex;
   justify-content: center;
   width: 100%;
 `
 const AgainButton = styled(Button)`
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.8em;
   background: #dbf4a7;
   width: 50%;
+`
+const NoMovies = styled.div`
+  &:empty:not(:focus):before {
+    content: attr(data-text);
+    font-family: 'Quicksand', sans-serif;
+    color: #aaa;
+    background: #eee;
+    border-radius: 8px;
+    padding: 20px;
+    position: absolute;
+    text-align: center;
+    top: 70px;
+    margin: 30px;
+  }
 `

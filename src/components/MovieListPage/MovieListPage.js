@@ -38,10 +38,8 @@ const ButtonWrapper = styled.div`
 
 const AddMovieButton = styled(Button)`
   background: #dbf4a7;
-  color: #51675e;
-  padding: 15px;
+  padding: 12px;
   text-align: center;
-  font-family: Arial;
   font-size: 0.8em;
   text-decoration: none;
   border: 2px solid transparent;

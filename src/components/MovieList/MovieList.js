@@ -26,7 +26,7 @@ const MovieWrapper = styled.section`
   padding: 15px;
   margin: 5px;
   border-radius: 8px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   position: relative;
 `
 const MovieTitle = styled.span`
@@ -55,7 +55,7 @@ export const MovieBorder = styled.div`
 
   &:empty:not(:focus):before {
     content: attr(data-text);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     color: #aaa;
     background: #eee;
     border-radius: 8px;
