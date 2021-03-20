@@ -23,10 +23,11 @@ export default function Navigation() {
 
 const Nav = styled.nav`
   position: fixed;
+  overflow-y: scroll;
   bottom: 0;
   display: flex;
   gap: 10px;
-  background: transparent;
+  background: #f8f8ff;
   width: 100%;
   padding: 20px;
 `
