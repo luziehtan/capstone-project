@@ -34,10 +34,7 @@ export default function MovieListPage({
 const ButtonWrapper = styled.div`
   text-align: center;
   margin-top: 35px;
-
-  &.margin {
-    margin-bottom: 110px;
-  }
+  margin-bottom: 110px;
 `
 
 const AddMovieButton = styled(Button)`

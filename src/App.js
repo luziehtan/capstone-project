@@ -43,18 +43,7 @@ export default function App() {
           />
         </Route>
       </Switch>
-      <Route exact path="/">
-        <Navigation />
-      </Route>
-      <Route path="/suggestions">
-        <Navigation />
-      </Route>
-      <Route path="/addmovie">
-        <Navigation />
-      </Route>
-      <Route path="/movies">
-        <Navigation />
-      </Route>
+      <Navigation />
     </>
   )
 
