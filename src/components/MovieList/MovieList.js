@@ -1,8 +1,19 @@
 import styled from 'styled-components/macro'
 
-export default function MovieList({ movies, borderHeight }) {
+export default function MovieList({
+  movies,
+  borderHeight,
+  hidden,
+  margin,
+  textAlign,
+  background,
+}) {
   return (
     <MovieBorder
+      textAlign={textAlign}
+      margin={margin}
+      hidden={hidden}
+      background={background}
       borderHeight={borderHeight}
       data-text="No movies here yet, add your own collection or maybe your Netflix watch list!"
     >
@@ -48,10 +59,12 @@ const FoodCategory = styled.span`
 export const MovieBorder = styled.div`
   border: 2px solid #7d84b2;
   border-radius: 8px;
-  margin: 15px;
+  margin: ${props => (props.margin ? '' : '15px')};
   height: ${props => (props.borderHeight ? '300px' : '')};
   overflow-y: scroll;
   position: relative;
+  text-align: ${props => (props.textAlign ? 'left' : '')};
+  background: ${props => (props.background ? '' : '#F8F8FF')};
 
   &:empty:not(:focus):before {
     content: attr(data-text);

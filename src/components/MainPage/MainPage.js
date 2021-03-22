@@ -64,8 +64,8 @@ const PlayButton = styled(Button)`
   background: transparent;
 `
 const ShowTextButton = styled(Button)`
-  position: relative;
-  top: 410px;
+  position: fixed;
+  bottom: 85px;
   left: 30px;
   background: #d5f9de;
   border: 1px dashed black;
@@ -169,6 +169,5 @@ const PlayIcon = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    filter: drop-shadow(0 0 0.005rem #8fa6cb);
   }
 `

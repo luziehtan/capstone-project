@@ -29,7 +29,7 @@ export default function App() {
           <MainPage onHandleChange={changeCategory} />
         </Route>
         <Route path="/suggestions">
-          <Suggestions filteredMovies={filteredMovies} />
+          <Suggestions filteredMovies={filteredMovies} movies={movies} />
         </Route>
         <Route path="/addmovie">
           <Toaster />
