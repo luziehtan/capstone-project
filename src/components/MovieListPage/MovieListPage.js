@@ -10,6 +10,7 @@ export default function MovieListPage({
   onHandleChange,
   onFilterMovies,
   filteredMovies,
+  onHandleDelete,
 }) {
   return (
     <>
@@ -21,7 +22,11 @@ export default function MovieListPage({
           optionText={'Choose the food category'}
         />
       </CategorySelect>
-      <MovieList movies={filteredMovies} borderHeight={300} />
+      <MovieList
+        movies={filteredMovies}
+        borderHeight={300}
+        onHandleDelete={onHandleDelete}
+      />
       <ButtonWrapper className="margin">
         <AddMovieButton as={Link} to="/addmovie">
           Add new movie to your collection

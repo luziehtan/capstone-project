@@ -40,6 +40,7 @@ export default function App() {
           <MovieListPage
             filteredMovies={filteredMovies}
             onHandleChange={changeCategory}
+            onHandleDelete={handleDelete}
           />
         </Route>
       </Switch>
@@ -82,5 +83,14 @@ export default function App() {
         },
       })
     }
+  }
+
+  // function handleDelete(currentKey) {
+  //  const newMovieList = movies.filter(movie => movie.key !== currentKey)
+  //  setMovies(newMovieList)
+  // }
+
+  function handleDelete(index) {
+    setMovies([...movies.slice(0, index), ...movies.slice(index + 1)])
   }
 }
