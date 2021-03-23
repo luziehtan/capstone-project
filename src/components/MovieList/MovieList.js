@@ -24,11 +24,11 @@ export default function MovieList({
     >
       {movies
         .sort((a, b) => a.movieTitle > b.movieTitle)
-        .map((movie, index) => (
+        .map(movie => (
           <MovieWrapper key={movie.movieTitle}>
             <MovieTitle>{movie.movieTitle}</MovieTitle>{' '}
             <FoodCategory>{movie.foodCategory}</FoodCategory>
-            <DeleteButton onClick={() => onHandleDelete(index)}>
+            <DeleteButton onClick={() => onHandleDelete(movie.movieTitle)}>
               <ButtonIcon className="gg-trash" />
             </DeleteButton>
           </MovieWrapper>

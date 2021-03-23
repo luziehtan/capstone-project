@@ -85,12 +85,7 @@ export default function App() {
     }
   }
 
-  // function handleDelete(currentKey) {
-  //  const newMovieList = movies.filter(movie => movie.key !== currentKey)
-  //  setMovies(newMovieList)
-  // }
-
-  function handleDelete(index) {
-    setMovies([...movies.slice(0, index), ...movies.slice(index + 1)])
+  function handleDelete(movieName) {
+    setMovies(movies.filter(movie => movie.movieTitle !== movieName))
   }
 }
