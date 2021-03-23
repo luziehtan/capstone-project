@@ -22,7 +22,7 @@ export default function MovieListPage({
         />
       </CategorySelect>
       <MovieList movies={filteredMovies} borderHeight={300} />
-      <ButtonWrapper>
+      <ButtonWrapper className="margin">
         <AddMovieButton as={Link} to="/addmovie">
           Add new movie to your collection
         </AddMovieButton>
@@ -34,14 +34,13 @@ export default function MovieListPage({
 const ButtonWrapper = styled.div`
   text-align: center;
   margin-top: 35px;
+  margin-bottom: 110px;
 `
 
 const AddMovieButton = styled(Button)`
   background: #dbf4a7;
-  color: #51675e;
-  padding: 15px;
+  padding: 12px;
   text-align: center;
-  font-family: Arial;
   font-size: 0.8em;
   text-decoration: none;
   border: 2px solid transparent;

@@ -10,6 +10,7 @@ import MainPage from './components/MainPage/MainPage'
 import MovieFormPage from './components/MovieFormPage/MovieFormPage'
 import MovieListPage from './components/MovieListPage/MovieListPage'
 import Suggestions from './components/Suggestions/Suggestions'
+import Navigation from './components/Navigation/Navigation'
 
 export default function App() {
   const [movies, setMovies] = useLocalStorage('movies', [])
@@ -22,25 +23,28 @@ export default function App() {
   const { push } = useHistory()
 
   return (
-    <Switch>
-      <Route exact path="/">
-        <MainPage onHandleChange={changeCategory} />
-      </Route>
-      <Route path="/suggestions">
-        <Suggestions filteredMovies={filteredMovies} />
-      </Route>
-      <Route path="/addmovie">
-        <Toaster />
-        <MovieFormPage onAddMovie={addMovie} />
-      </Route>
-      <Route path="/movies">
-        <Toaster />
-        <MovieListPage
-          filteredMovies={filteredMovies}
-          onHandleChange={changeCategory}
-        />
-      </Route>
-    </Switch>
+    <>
+      <Switch>
+        <Route exact path="/">
+          <MainPage onHandleChange={changeCategory} />
+        </Route>
+        <Route path="/suggestions">
+          <Suggestions filteredMovies={filteredMovies} movies={movies} />
+        </Route>
+        <Route path="/addmovie">
+          <Toaster />
+          <MovieFormPage onAddMovie={addMovie} />
+        </Route>
+        <Route path="/movies">
+          <Toaster />
+          <MovieListPage
+            filteredMovies={filteredMovies}
+            onHandleChange={changeCategory}
+          />
+        </Route>
+      </Switch>
+      <Navigation />
+    </>
   )
 
   function changeCategory(e) {

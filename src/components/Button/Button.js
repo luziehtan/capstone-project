@@ -8,8 +8,14 @@ export default styled.button`
   text-align: center;
   border: none;
   border-radius: 8px;
-  background: #eee;
+  background: ${props => (props.isActive ? '#fb9488' : '#fed9d5')};
   width: 100%;
   cursor: pointer;
-  font-family: inherit;
+  font-family: 'Courier New';
+
+  &.active {
+    border: 1px dashed #333;
+    background: #fb9488;
+    color: #333;
+  }
 `

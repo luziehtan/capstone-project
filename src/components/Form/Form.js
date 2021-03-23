@@ -44,7 +44,7 @@ const FormWrapper = styled.form`
   background: rgba(138, 163, 153, 0.3);
   padding: 15px;
   border-radius: 8px;
-  font-family: Arial;
+  font-family: 'Quicksand', sans-serif;
   margin: 15px;
 `
 
@@ -53,7 +53,6 @@ const AddMovieButton = styled(Button)`
   color: black;
   border: 2px solid transparent;
   font-size: 0.8em;
-  font-family: inherit;
 `
 const SelectCategory = styled(Select)`
   width: 100%;
