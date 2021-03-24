@@ -9,8 +9,6 @@ export default function Suggestions({
   filteredMovies,
   borderHeight,
   movies,
-  margin,
-  textAlign,
   background,
 }) {
   const [suggestions, setSuggestions] = useState(movieRandomizer())
@@ -30,6 +28,8 @@ export default function Suggestions({
         hidden={filteredMovies.length === 0}
         borderHeight={borderHeight}
         movies={suggestions}
+        display={'none'}
+        right={'5px'}
       />
       <NoMovies hidden={filteredMovies.length >= 1}>
         {filteredMovies.length === 0 && (
@@ -43,6 +43,8 @@ export default function Suggestions({
           textAlign={'left'}
           background={background}
           movies={randomizeAll()}
+          display={'none'}
+          right={'5x'}
         />
       </NoMovies>
     </>
