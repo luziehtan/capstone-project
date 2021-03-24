@@ -16,6 +16,11 @@ export default function MainPage({ onFilterMovies, onHandleChange }) {
   return (
     <>
       <Header subtitle={'Which movie should you watch now?'} />
+      <WelcomeText>
+        Hi there and welcome to "eat'n'watch"
+        <br />
+        What's that on your plate?
+      </WelcomeText>
       <FoodSelectWrapper>
         <FoodSelectForm onChange={onHandleChange} showAllMovies="false">
           <Select
@@ -50,9 +55,16 @@ export default function MainPage({ onFilterMovies, onHandleChange }) {
   )
 }
 
+const WelcomeText = styled.div`
+  text-align: center;
+  padding: 20px;
+  margin: 0 20px;
+  font-size: 0.9em;
+`
+
 const FoodSelectWrapper = styled.div`
   position: relative;
-  top: 60px;
+  margin-top: 10px;
   text-align: center;
 `
 const FoodSelectForm = styled.form`
