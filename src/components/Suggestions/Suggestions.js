@@ -17,7 +17,7 @@ export default function Suggestions({
 
   return (
     <>
-      <Header subtitle={'Try these movies and enjoy your meal!'} />
+      <Header subtitle={'Try one of these movies and enjoy your meal!'} />
       <ButtonWrapper>
         <AgainButton
           hidden={filteredMovies.length <= 3}
@@ -104,7 +104,7 @@ const AddMoreMovies = styled.div`
 `
 const AddMoreButton = styled(Button)`
   font-size: 0.9em;
-  background: rgba(125, 132, 178, 0.6);
+  background: #dbf4a7;
   width: 50%;
   margin-top: 20px;
 `
