@@ -64,8 +64,9 @@ const DeleteButton = styled(Button)`
 const ButtonIcon = styled.div`
   &.gg-trash {
     box-sizing: border-box;
-    position: relative;
-    display: block;
+    position: absolute;
+    right: 10px;
+    bottom: 2px;
     transform: scale(var(--ggs, 1));
     width: 10px;
     height: 12px;

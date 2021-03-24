@@ -53,7 +53,7 @@ export const MovieBorder = styled.div`
   &:empty:not(:focus):before {
     content: attr(data-text);
     font-family: 'Quicksand', sans-serif;
-    color: #aaa;
+    font-size: 0.9em;
     background: #eee;
     border-radius: 8px;
     padding: 20px;

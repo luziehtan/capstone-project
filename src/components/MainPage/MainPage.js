@@ -71,10 +71,10 @@ const FoodSelectForm = styled.form`
   position: absolute;
   left: 35px;
   width: 80%;
-  border: 2px solid #8fa6cb;
+  border: 2px solid #7d84b2;
   border-radius: 8px;
   padding: 20px 20px 70px 20px;
-  background: rgba(143, 166, 203, 0.1);
+  background: rgba(125, 132, 178, 0.1);
 `
 const PlayButton = styled(Button)`
   background: transparent;
@@ -82,7 +82,7 @@ const PlayButton = styled(Button)`
 const ShowTextButton = styled(Button)`
   position: fixed;
   bottom: 85px;
-  left: 20px;
+  left: 10px;
   background: #d5f9de;
   border: 1px dashed black;
   height: 30px;
@@ -93,14 +93,14 @@ const ShowTextButton = styled(Button)`
 const ButtonText = styled.span`
   position: absolute;
   bottom: 94px;
-  left: 60px;
+  left: 50px;
   font-family: 'Quicksand', sans-serif;
   font-size: 0.6em;
 `
 const Text = styled.div`
   position: absolute;
   bottom: 95px;
-  left: -5px;
+  left: -15px;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
   font-size: 0.9em;
@@ -109,6 +109,7 @@ const Text = styled.div`
   margin: 0 40px;
   border: 1px solid #8aa399;
   border-radius: 8px;
+  width: 320px;
 `
 const BotIcon = styled.div`
   &.gg-bot {

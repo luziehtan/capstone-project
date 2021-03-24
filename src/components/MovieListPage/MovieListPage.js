@@ -11,6 +11,7 @@ export default function MovieListPage({
   onFilterMovies,
   filteredMovies,
   onHandleDelete,
+  category,
 }) {
   return (
     <>
@@ -19,7 +20,7 @@ export default function MovieListPage({
         <Select
           foodCategoryValue={onFilterMovies}
           showAllMovies="true"
-          optionText={'Choose the food category'}
+          optionText={category ?? 'Choose the food category'}
         />
       </CategorySelect>
       <MovieList

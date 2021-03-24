@@ -13,7 +13,13 @@ import Suggestions from './components/Suggestions/Suggestions'
 import Navigation from './components/Navigation/Navigation'
 
 export default function App() {
-  const [movies, setMovies] = useLocalStorage('movies', [])
+  const [movies, setMovies] = useLocalStorage('movies', [
+    { movieTitle: 'The Shawshank Redemption', foodCategory: 'American' },
+    { movieTitle: 'Coco', foodCategory: 'Mexican' },
+    { movieTitle: 'The Intouchables', foodCategory: 'French' },
+    { movieTitle: 'Your Name.', foodCategory: 'Sushi' },
+    { movieTitle: 'The Lion King', foodCategory: '🍿 Popcorn' },
+  ])
 
   const [category, setCategory] = useState(null)
   const filteredMovies = movies.filter(
