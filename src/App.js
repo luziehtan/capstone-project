@@ -68,6 +68,7 @@ export default function App() {
           marginTop: '130px',
           fontFamily: 'Arial',
         },
+        icon: '🚨',
       })
       push('/addmovie')
     } else {
@@ -81,11 +82,22 @@ export default function App() {
           marginTop: '325px',
           fontFamily: 'Arial',
         },
+        icon: '🎬',
       })
     }
   }
 
   function handleDelete(movieName) {
     setMovies(movies.filter(movie => movie.movieTitle !== movieName))
+    toast.success('Movie deleted from your list!', {
+      style: {
+        reverseOrder: false,
+        position: 'top-center',
+        border: '1px solid black',
+        marginTop: '325px',
+        fontFamily: 'Arial',
+      },
+      icon: '☑️',
+    })
   }
 }

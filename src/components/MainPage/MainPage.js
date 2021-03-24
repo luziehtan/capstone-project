@@ -59,6 +59,10 @@ const FoodSelectForm = styled.form`
   position: absolute;
   left: 35px;
   width: 80%;
+  border: 2px solid #8fa6cb;
+  border-radius: 8px;
+  padding: 20px 20px 70px 20px;
+  background: rgba(143, 166, 203, 0.1);
 `
 const PlayButton = styled(Button)`
   background: transparent;
@@ -66,7 +70,7 @@ const PlayButton = styled(Button)`
 const ShowTextButton = styled(Button)`
   position: fixed;
   bottom: 85px;
-  left: 30px;
+  left: 20px;
   background: #d5f9de;
   border: 1px dashed black;
   height: 30px;
@@ -77,14 +81,14 @@ const ShowTextButton = styled(Button)`
 const ButtonText = styled.span`
   position: absolute;
   bottom: 94px;
-  left: 70px;
+  left: 60px;
   font-family: 'Quicksand', sans-serif;
   font-size: 0.6em;
 `
 const Text = styled.div`
   position: absolute;
   bottom: 95px;
-  left: 0;
+  left: -5px;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
   font-size: 0.9em;
