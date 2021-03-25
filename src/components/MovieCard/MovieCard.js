@@ -6,25 +6,19 @@ import 'css.gg/icons/css/film.css'
 
 export default function MovieCard({
   onHandleDelete,
-  key,
   movieName,
   movieFoodCategory,
   display,
   right,
 }) {
   return (
-    <>
-      <MovieWrapper key={key}>
-        <MovieTitle>{movieName}</MovieTitle>{' '}
-        <FoodCategory right={right}>{movieFoodCategory}</FoodCategory>
-        <DeleteButton
-          display={display}
-          onClick={() => onHandleDelete(movieName)}
-        >
-          <ButtonIcon className="gg-trash" />
-        </DeleteButton>
-      </MovieWrapper>
-    </>
+    <MovieWrapper>
+      <MovieTitle>{movieName}</MovieTitle>{' '}
+      <FoodCategory right={right}>{movieFoodCategory}</FoodCategory>
+      <DeleteButton display={display} onClick={() => onHandleDelete(movieName)}>
+        <ButtonIcon className="gg-trash" />
+      </DeleteButton>
+    </MovieWrapper>
   )
 }
 

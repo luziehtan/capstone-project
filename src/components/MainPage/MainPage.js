@@ -55,7 +55,7 @@ export default function MainPage({ onFilterMovies, onHandleChange }) {
   )
 }
 
-const WelcomeText = styled.div`
+const WelcomeText = styled.p`
   text-align: center;
   padding: 20px;
   margin: 0 20px;
