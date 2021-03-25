@@ -46,7 +46,7 @@ export default function Suggestions({
           background={background}
           movies={randomizeAll()}
           display={'none'}
-          right={'5x'}
+          right={'5px'}
         />
       </NoMovies>
       <AddMoreMovies hidden={filteredMovies.length > 3}>

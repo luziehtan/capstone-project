@@ -6,18 +6,19 @@ import styled from 'styled-components/macro'
 
 export default function Form({ onAddMovie, foodCategoryValue }) {
   return (
-    <FormWrapper onSubmit={handleSubmit}>
+    <FormWrapper onSubmit={handleSubmit} data-testid="form">
       <Input
         name="movieTitle"
         labelText="Movie:"
         placeholder="Enter a new movie, e.g. 'Memoirs of a Geisha'"
       />
-      <SelectCategory
+      <Select
         returnValue="true"
         foodCategoryValue={foodCategoryValue}
         name="foodCategory"
         labelText="Food Category:"
         optionText={'Choose a matching food category, e.g. Sushi'}
+        data-testId="select"
       />
       <AddMovieButton>Add movie</AddMovieButton>
     </FormWrapper>
@@ -53,7 +54,4 @@ const AddMovieButton = styled(Button)`
   color: black;
   border: 2px solid transparent;
   font-size: 0.8em;
-`
-const SelectCategory = styled(Select)`
-  width: 100%;
 `

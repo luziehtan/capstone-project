@@ -13,7 +13,7 @@ export default function Navigation() {
         <HomeIcon className="gg-play-button-r" />
         <TextWrap>Play</TextWrap>
       </NavButton>
-      <NavButton as={NavLink} to="/movies">
+      <NavButton as={NavLink} to="/movies" data-testid="movies">
         <MoviesIcon className="gg-film" />
         <TextWrap>Movies</TextWrap>
       </NavButton>
