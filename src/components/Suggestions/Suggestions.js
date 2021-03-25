@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import styled from 'styled-components/macro'
 
+import { Link } from 'react-router-dom'
+
 import Header from '../Header/Header'
 import MovieList from '../MovieList/MovieList'
 import Button from '../Button/Button'
@@ -9,15 +11,13 @@ export default function Suggestions({
   filteredMovies,
   borderHeight,
   movies,
-  margin,
-  textAlign,
   background,
 }) {
   const [suggestions, setSuggestions] = useState(movieRandomizer())
 
   return (
     <>
-      <Header subtitle={'Try these movies and enjoy your meal!'} />
+      <Header subtitle={'Try one of these movies and enjoy your meal!'} />
       <ButtonWrapper>
         <AgainButton
           hidden={filteredMovies.length <= 3}
@@ -30,6 +30,8 @@ export default function Suggestions({
         hidden={filteredMovies.length === 0}
         borderHeight={borderHeight}
         movies={suggestions}
+        display={'none'}
+        right={'5px'}
       />
       <NoMovies hidden={filteredMovies.length >= 1}>
         {filteredMovies.length === 0 && (
@@ -43,8 +45,18 @@ export default function Suggestions({
           textAlign={'left'}
           background={background}
           movies={randomizeAll()}
+          display={'none'}
+          right={'5x'}
         />
       </NoMovies>
+      <AddMoreMovies hidden={filteredMovies.length > 3}>
+        What about adding new movies to this category for next time?
+        <br />
+        <br />
+        <AddMoreButton as={Link} to="/addmovie">
+          Add more movies!
+        </AddMoreButton>
+      </AddMoreMovies>
     </>
   )
 
@@ -73,6 +85,7 @@ const AgainButton = styled(Button)`
 `
 const NoMovies = styled.div`
   text-align: center;
+  font-size: 0.9em;
   background: #eee;
   padding: 25px 5px 5px 5px;
   margin: 15px;
@@ -80,4 +93,18 @@ const NoMovies = styled.div`
 `
 const TextWrapper = styled.div`
   margin-bottom: 15px;
+`
+const AddMoreMovies = styled.div`
+  border-radius: 8px;
+  padding: 25px;
+  margin: 15px;
+  text-align: center;
+  font-size: 0.9em;
+  margin-bottom: 110px;
+`
+const AddMoreButton = styled(Button)`
+  font-size: 0.9em;
+  background: #dbf4a7;
+  width: 50%;
+  margin-top: 20px;
 `

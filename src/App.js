@@ -13,7 +13,13 @@ import Suggestions from './components/Suggestions/Suggestions'
 import Navigation from './components/Navigation/Navigation'
 
 export default function App() {
-  const [movies, setMovies] = useLocalStorage('movies', [])
+  const [movies, setMovies] = useLocalStorage('movies', [
+    { movieTitle: 'The Shawshank Redemption', foodCategory: 'American' },
+    { movieTitle: 'Coco', foodCategory: 'Mexican' },
+    { movieTitle: 'The Intouchables', foodCategory: 'French' },
+    { movieTitle: 'Your Name.', foodCategory: 'Sushi' },
+    { movieTitle: 'The Lion King', foodCategory: '🍿 Popcorn' },
+  ])
 
   const [category, setCategory] = useState(null)
   const filteredMovies = movies.filter(
@@ -40,6 +46,7 @@ export default function App() {
           <MovieListPage
             filteredMovies={filteredMovies}
             onHandleChange={changeCategory}
+            onHandleDelete={handleDelete}
           />
         </Route>
       </Switch>
@@ -67,6 +74,7 @@ export default function App() {
           marginTop: '130px',
           fontFamily: 'Arial',
         },
+        icon: '🚨',
       })
       push('/addmovie')
     } else {
@@ -80,7 +88,22 @@ export default function App() {
           marginTop: '325px',
           fontFamily: 'Arial',
         },
+        icon: '🎬',
       })
     }
+  }
+
+  function handleDelete(movieName) {
+    setMovies(movies.filter(movie => movie.movieTitle !== movieName))
+    toast.success('Movie deleted from your list!', {
+      style: {
+        reverseOrder: false,
+        position: 'top-center',
+        border: '1px solid black',
+        marginTop: '325px',
+        fontFamily: 'Arial',
+      },
+      icon: '☑️',
+    })
   }
 }

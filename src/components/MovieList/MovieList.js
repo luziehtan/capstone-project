@@ -1,5 +1,9 @@
 import styled from 'styled-components/macro'
 
+import MovieCard from '../MovieCard/MovieCard'
+
+import 'css.gg/icons/css/film.css'
+
 export default function MovieList({
   movies,
   borderHeight,
@@ -7,6 +11,9 @@ export default function MovieList({
   margin,
   textAlign,
   background,
+  onHandleDelete,
+  display,
+  right,
 }) {
   return (
     <MovieBorder
@@ -20,41 +27,18 @@ export default function MovieList({
       {movies
         .sort((a, b) => a.movieTitle > b.movieTitle)
         .map(movie => (
-          <MovieWrapper key={movie.movieTitle}>
-            <MovieTitle>{movie.movieTitle}</MovieTitle>{' '}
-            <FoodCategory>{movie.foodCategory}</FoodCategory>
-          </MovieWrapper>
+          <MovieCard
+            key={movie.movieTitle}
+            movieName={movie.movieTitle}
+            movieFoodCategory={movie.foodCategory}
+            onHandleDelete={onHandleDelete}
+            display={display}
+            right={right}
+          />
         ))}
     </MovieBorder>
   )
 }
-
-const MovieWrapper = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(125, 132, 178, 0.3);
-  padding: 15px;
-  margin: 5px;
-  border-radius: 8px;
-  font-family: 'Quicksand', sans-serif;
-  position: relative;
-`
-const MovieTitle = styled.span`
-  word-wrap: break-word;
-  width: 200px;
-`
-const FoodCategory = styled.span`
-  position: absolute;
-  background: rgba(125, 132, 178, 0.6);
-  color: #5b639a;
-  border-radius: 8px;
-  font-size: 0.8em;
-  padding: 5px;
-  right: 10px;
-  margin-left: 20px;
-  z-index: 1;
-`
 
 export const MovieBorder = styled.div`
   border: 2px solid #7d84b2;
@@ -69,7 +53,7 @@ export const MovieBorder = styled.div`
   &:empty:not(:focus):before {
     content: attr(data-text);
     font-family: 'Quicksand', sans-serif;
-    color: #aaa;
+    font-size: 0.9em;
     background: #eee;
     border-radius: 8px;
     padding: 20px;

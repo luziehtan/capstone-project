@@ -16,6 +16,11 @@ export default function MainPage({ onFilterMovies, onHandleChange }) {
   return (
     <>
       <Header subtitle={'Which movie should you watch now?'} />
+      <WelcomeText>
+        Hi there and welcome to "eat'n'watch"
+        <br />
+        What's that on your plate?
+      </WelcomeText>
       <FoodSelectWrapper>
         <FoodSelectForm onChange={onHandleChange} showAllMovies="false">
           <Select
@@ -50,15 +55,26 @@ export default function MainPage({ onFilterMovies, onHandleChange }) {
   )
 }
 
+const WelcomeText = styled.div`
+  text-align: center;
+  padding: 20px;
+  margin: 0 20px;
+  font-size: 0.9em;
+`
+
 const FoodSelectWrapper = styled.div`
   position: relative;
-  top: 60px;
+  margin-top: 10px;
   text-align: center;
 `
 const FoodSelectForm = styled.form`
   position: absolute;
   left: 35px;
   width: 80%;
+  border: 2px solid #7d84b2;
+  border-radius: 8px;
+  padding: 20px 20px 70px 20px;
+  background: rgba(125, 132, 178, 0.1);
 `
 const PlayButton = styled(Button)`
   background: transparent;
@@ -66,7 +82,7 @@ const PlayButton = styled(Button)`
 const ShowTextButton = styled(Button)`
   position: fixed;
   bottom: 85px;
-  left: 30px;
+  left: 10px;
   background: #d5f9de;
   border: 1px dashed black;
   height: 30px;
@@ -77,14 +93,14 @@ const ShowTextButton = styled(Button)`
 const ButtonText = styled.span`
   position: absolute;
   bottom: 94px;
-  left: 70px;
+  left: 50px;
   font-family: 'Quicksand', sans-serif;
   font-size: 0.6em;
 `
 const Text = styled.div`
   position: absolute;
   bottom: 95px;
-  left: 0;
+  left: -15px;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
   font-size: 0.9em;
@@ -93,6 +109,7 @@ const Text = styled.div`
   margin: 0 40px;
   border: 1px solid #8aa399;
   border-radius: 8px;
+  width: 320px;
 `
 const BotIcon = styled.div`
   &.gg-bot {

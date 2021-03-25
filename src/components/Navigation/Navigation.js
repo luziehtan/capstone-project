@@ -23,13 +23,17 @@ export default function Navigation() {
 
 const Nav = styled.nav`
   position: fixed;
+  justify-content: space-between;
+  align-content: center;
   overflow-y: scroll;
   bottom: 0;
   display: flex;
   background: #f8f8ff;
-  width: 100%;
   padding: 20px;
   z-index: 2;
+  width: 100%;
+  left: 0;
+  right: 0;
 `
 
 const NavButton = styled(Button)`
@@ -37,6 +41,7 @@ const NavButton = styled(Button)`
   font-family: 'Courier New';
   display: flex;
   margin: 0 10px;
+  width: 100%;
 `
 const HomeIcon = styled.div`
   &.gg-play-button-r {
