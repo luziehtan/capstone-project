@@ -44,6 +44,7 @@ export default function App() {
         <Route path="/movies">
           <Toaster />
           <MovieListPage
+            category={category}
             filteredMovies={filteredMovies}
             onHandleChange={changeCategory}
             onHandleDelete={handleDelete}

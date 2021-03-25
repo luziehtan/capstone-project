@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom'
 
 export default function MovieListPage({
   onHandleChange,
-  onFilterMovies,
   filteredMovies,
   onHandleDelete,
   category,
@@ -18,7 +17,6 @@ export default function MovieListPage({
       <Header subtitle={'Your movie collection'} />
       <CategorySelect onChange={onHandleChange}>
         <Select
-          foodCategoryValue={onFilterMovies}
           showAllMovies="true"
           optionText={category ?? 'Choose the food category'}
         />
