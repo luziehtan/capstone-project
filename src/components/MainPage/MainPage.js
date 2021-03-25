@@ -159,7 +159,6 @@ const PlayIcon = styled.div`
     border: 1px solid #dbf4a7;
     border-radius: 4px;
     background: white;
-    filter: drop-shadow(0 0 0.1rem #dbf4a7);
   }
   &.gg-play-button-r::after {
     content: '';
