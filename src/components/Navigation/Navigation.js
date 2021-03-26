@@ -9,7 +9,7 @@ import styled from 'styled-components/macro'
 export default function Navigation() {
   return (
     <Nav>
-      <NavButton as={NavLink} exact to="/">
+      <NavButton as={NavLink} to="/play">
         <HomeIcon className="gg-play-button-r" />
         <TextWrap>Play</TextWrap>
       </NavButton>

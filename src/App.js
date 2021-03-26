@@ -6,6 +6,7 @@ import { toast } from 'react-hot-toast'
 
 import useLocalStorage from './hooks/useLocalStorage'
 
+import StartPage from './components/StartPage/StartPage'
 import MainPage from './components/MainPage/MainPage'
 import MovieFormPage from './components/MovieFormPage/MovieFormPage'
 import MovieListPage from './components/MovieListPage/MovieListPage'
@@ -32,6 +33,9 @@ export default function App() {
     <>
       <Switch>
         <Route exact path="/">
+          <StartPage />
+        </Route>
+        <Route path="/play">
           <MainPage onHandleChange={changeCategory} />
         </Route>
         <Route path="/suggestions">
@@ -51,7 +55,9 @@ export default function App() {
           />
         </Route>
       </Switch>
-      <Navigation />
+      <Route exact path={['/play', '/suggestions', '/addmovie', '/movies']}>
+        <Navigation />
+      </Route>
     </>
   )
 
