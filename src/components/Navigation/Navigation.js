@@ -23,25 +23,21 @@ export default function Navigation() {
 
 const Nav = styled.nav`
   position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
   justify-content: space-between;
   align-content: center;
   overflow-y: scroll;
-  bottom: 0;
-  display: flex;
-  background: #f8f8ff;
+  background: var(--color-background);
   padding: 20px;
   z-index: 2;
-  width: 100%;
-  left: 0;
-  right: 0;
 `
 
 const NavButton = styled(Button)`
-  font-size: 0.8em;
-  font-family: 'Courier New';
   display: flex;
   margin: 0 10px;
-  width: 100%;
 `
 const HomeIcon = styled.div`
   &.gg-play-button-r {
@@ -56,35 +52,35 @@ const HomeIcon = styled.div`
   }
   &.gg-play-button-r::before {
     content: '';
-    display: block;
     box-sizing: border-box;
+    display: block;
+    top: 2px;
     width: 0;
     height: 10px;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
     border-left: 6px solid;
-    top: 2px;
   }
 `
 const MoviesIcon = styled.div`
   &.gg-film {
     display: inline-block;
-    border: 2px solid;
-    transform: scale(var(--ggs, 1));
     width: 22px;
     height: 18px;
+    transform: scale(var(--ggs, 1));
+    border: 2px solid;
     margin-right: 15px;
   }
   &.gg-film::after {
     content: '';
+    left: 2px;
+    top: 2px;
     width: 2px;
     height: 2px;
     background: currentColor;
-    left: 2px;
-    top: 2px;
     box-shadow: 0 4px 0, 0 8px 0, 12px 0 0, 12px 4px 0, 12px 8px 0;
   }
 `
 const TextWrap = styled.span`
-  font-size: 1.2em;
+  font-size: var(--font-xxlarge);
 `

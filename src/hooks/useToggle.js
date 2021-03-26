@@ -10,8 +10,6 @@ export default function useToggle(startValue) {
   return [boolean, toggle]
 }
 
-// Wo der Toogle genutzt wird:
-
+// Usage:
 // const [isActive, toggleActive] = useToggle(false)
-
-// zB <button onClick={toggleActive}>{isActive ? "Ho" : "Hey"}</button>
+// e.g. <button onClick={toggleActive}>{isActive ? "Ho" : "Hey"}</button>

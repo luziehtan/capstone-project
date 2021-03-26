@@ -45,29 +45,27 @@ export default function Select({ labelText, optionText, name, showAllMovies }) {
 }
 
 const Label = styled.label`
+  position: relative;
   display: grid;
   gap: 5px;
-  position: relative;
 
   &:after {
     content: '▾';
-    font-family: Consolas;
-    font-size: 1.3em;
-    color: black;
+    position: absolute;
     right: 20px;
     bottom: 2px;
+    font-size: var(--font-xxlarge);
     padding: 0 0 2px;
-    position: absolute;
     pointer-events: none;
   }
 `
 const SelectInput = styled.select`
-  border: 1px dashed #bbb;
+  appearance: none;
+  font-size: var(--font-small);
+  height: 33px;
+  background: var(--color-white);
+  border: 1px dashed var(--color-darkgray);
   border-radius: 8px;
   margin-top: 8px;
-  width: 100%;
-  height: 33px;
   cursor: pointer;
-  appearance: none;
-  background: white;
 `

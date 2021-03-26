@@ -42,13 +42,9 @@ const ButtonWrapper = styled.div`
 `
 
 const AddMovieButton = styled(Button)`
-  background: #dbf4a7;
-  padding: 12px;
-  text-align: center;
-  font-size: 0.8em;
-  text-decoration: none;
+  font-size: var(--font-medium);
+  background: var(--color-yellowgreencrayola);
   border: 2px solid transparent;
-  width: 100%;
 `
 
 const CategorySelect = styled.form`

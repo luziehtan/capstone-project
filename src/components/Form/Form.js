@@ -20,7 +20,9 @@ export default function Form({ onAddMovie, foodCategoryValue }) {
         optionText={'Choose a matching food category, e.g. Sushi'}
         data-testId="select"
       />
-      <AddMovieButton>Add movie</AddMovieButton>
+      <ButtonWrapper>
+        <AddMovieButton>Add movie</AddMovieButton>
+      </ButtonWrapper>
     </FormWrapper>
   )
 
@@ -39,19 +41,22 @@ export default function Form({ onAddMovie, foodCategoryValue }) {
 }
 
 const FormWrapper = styled.form`
+  font-family: 'Quicksand', sans-serif;
+  background: var(--color-morningblue-light);
   display: grid;
   gap: 10px;
-  border: 2px solid #8aa399;
-  background: rgba(138, 163, 153, 0.3);
-  padding: 15px;
+  border: 2px solid var(--color-morningblue);
   border-radius: 8px;
-  font-family: 'Quicksand', sans-serif;
+  padding: 15px;
   margin: 15px;
+`
+const ButtonWrapper = styled.div`
+  text-align: center;
 `
 
 const AddMovieButton = styled(Button)`
-  background: #dbf4a7;
-  color: black;
+  width: 70%;
+  background: var(--color-yellowgreencrayola);
   border: 2px solid transparent;
-  font-size: 0.8em;
+  margin-top: 8px;
 `

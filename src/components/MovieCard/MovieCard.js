@@ -23,15 +23,15 @@ export default function MovieCard({
 }
 
 const MovieWrapper = styled.section`
+  position: relative;
+  font-family: 'Quicksand', sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(125, 132, 178, 0.3);
+  background: var(--color-rhythm-verylight);
+  border-radius: 8px;
   padding: 15px;
   margin: 5px;
-  border-radius: 8px;
-  font-family: 'Quicksand', sans-serif;
-  position: relative;
 `
 const MovieTitle = styled.span`
   word-wrap: break-word;
@@ -39,21 +39,21 @@ const MovieTitle = styled.span`
 `
 const FoodCategory = styled.span`
   position: absolute;
-  background: rgba(125, 132, 178, 0.6);
-  color: #5b639a;
-  border-radius: 8px;
-  font-size: 0.8em;
-  padding: 5px;
   right: ${props => (props.right ? '5px' : '40px')};
+  font-size: var(--font-medium);
+  background: var(--color-rhythm-light);
+  color: var(--color-darkbluegray);
+  border-radius: 8px;
+  padding: 5px;
   margin-left: 20px;
   z-index: 1;
 `
 const DeleteButton = styled(Button)`
-  background: transparent;
-  width: 10%;
   position: relative;
   right: -10px;
   display: ${props => (props.display ? 'none' : 'block')};
+  width: 10%;
+  background: transparent;
 `
 const ButtonIcon = styled.div`
   &.gg-trash {
@@ -65,34 +65,34 @@ const ButtonIcon = styled.div`
     width: 10px;
     height: 12px;
     border: 2px solid transparent;
-    box-shadow: 0 0 0 2px, inset -2px 0 0, inset 2px 0 0;
     border-bottom-left-radius: 1px;
     border-bottom-right-radius: 1px;
+    box-shadow: 0 0 0 2px, inset -2px 0 0, inset 2px 0 0;
     margin-top: 4px;
   }
   &.gg-trash::after,
   &.gg-trash::before {
     content: '';
-    display: block;
     box-sizing: border-box;
     position: absolute;
+    display: block;
   }
   &.gg-trash::after {
-    background: currentColor;
-    border-radius: 3px;
-    width: 16px;
-    height: 2px;
     top: -4px;
     left: -5px;
+    width: 16px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 3px;
   }
   &.gg-trash::before {
+    top: -7px;
+    left: -2px;
     width: 10px;
     height: 4px;
     border: 2px solid;
     border-bottom: transparent;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
-    top: -7px;
-    left: -2px;
   }
 `

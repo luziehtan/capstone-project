@@ -21,11 +21,11 @@ const Label = styled.label`
   gap: 5px;
 `
 const LabelInput = styled.input`
-  border: 1px dashed #bbb;
-  border-radius: 8px;
-  margin-top: 8px;
+  font-size: var(--font-small);
   height: 33px;
   outline: none;
+  border: 1px dashed var(--color-darkgray);
+  border-radius: 8px;
   padding-left: 10px;
-  font-size: 0.65em;
+  margin-top: 8px;
 `

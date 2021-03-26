@@ -76,35 +76,32 @@ export default function Suggestions({
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 100%;
 `
 const AgainButton = styled(Button)`
-  font-size: 0.8em;
-  background: #dbf4a7;
-  width: 50%;
+  width: 30%;
+  background: var(--color-yellowgreencrayola);
 `
 const NoMovies = styled.div`
+  font-size: var(--font-large);
   text-align: center;
-  font-size: 0.9em;
-  background: #eee;
+  background: var(--color-gray);
+  border-radius: 8px;
   padding: 25px 5px 5px 5px;
   margin: 15px;
-  border-radius: 8px;
 `
 const TextWrapper = styled.div`
   margin-bottom: 15px;
 `
 const AddMoreMovies = styled.div`
+  font-size: var(--font-large);
+  text-align: center;
   border-radius: 8px;
   padding: 25px;
-  margin: 15px;
-  text-align: center;
-  font-size: 0.9em;
-  margin-bottom: 110px;
+  margin: 15px 15px 110px 15px;
 `
 const AddMoreButton = styled(Button)`
-  font-size: 0.9em;
-  background: #dbf4a7;
+  font-size: var(--font-large);
   width: 50%;
+  background: var(--color-yellowgreencrayola);
   margin-top: 20px;
 `
