@@ -10,6 +10,7 @@ body {
   margin: 0 auto;
   max-width: 600px;
   background: var(--color-background);
+  color: var(--color-almostblack);
 }
 
 :root {

@@ -24,10 +24,11 @@ export default function MainPage({ onFilterMovies, onHandleChange }) {
       <FoodSelectWrapper>
         <FoodSelectForm onChange={onHandleChange} showAllMovies="false">
           <Select
+            name="mainpageselect"
             optionText={'Choose your food category'}
             foodCategoryValue={onFilterMovies}
           />
-          <PlayButton as={Link} to={'/suggestions'}>
+          <PlayButton as={Link} to={'/suggestions'} name="playbutton">
             <center>
               <PlayIcon className="gg-play-button-r" />
             </center>
