@@ -30,8 +30,8 @@ const StartingPage = styled.div`
 `
 const StartButton = styled(Button)`
   position: fixed;
-  top: 42%;
   margin: 0 auto;
+  top: 42%;
   width: 70%;
   animation: cssAnimation1 0s 3s forwards;
   visibility: hidden;
