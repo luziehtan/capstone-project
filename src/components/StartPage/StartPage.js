@@ -31,6 +31,8 @@ const StartingPage = styled.div`
 const StartButton = styled(Button)`
   position: fixed;
   top: 42%;
+  left: 0;
+  right: 0;
   width: 70%;
   animation: cssAnimation1 0s 3s forwards;
   visibility: hidden;
