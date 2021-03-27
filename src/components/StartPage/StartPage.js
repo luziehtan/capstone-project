@@ -11,9 +11,11 @@ export default function StartPage() {
     <StartingPage>
       <img src={Logo} alt="eatnwatchlogo" width="" height="80" />
       <Loading src={LoadingGif} alt="eatnwatchloading" width="" height="80px" />
-      <StartButton as={Link} to="/play">
-        Let's Play!
-      </StartButton>
+      <ButtonWrapper>
+        <StartButton as={Link} to="/play">
+          Let's Play!
+        </StartButton>
+      </ButtonWrapper>
     </StartingPage>
   )
 }
@@ -28,11 +30,12 @@ const StartingPage = styled.div`
   left: 0;
   right: 0;
 `
-const StartButton = styled(Button)`
+const ButtonWrapper = styled.div`
   position: fixed;
-  margin: 0 auto;
   top: 42%;
-  width: 70%;
+  text-align: center;
+`
+const StartButton = styled(Button)`
   animation: cssAnimation1 0s 3s forwards;
   visibility: hidden;
   border: 1px dashed var(--color-congopink);
