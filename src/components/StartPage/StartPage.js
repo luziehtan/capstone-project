@@ -33,6 +33,8 @@ const StartingPage = styled.div`
 const ButtonWrapper = styled.div`
   position: fixed;
   top: 42%;
+  left: 0;
+  right: 0;
   text-align: center;
 `
 const StartButton = styled(Button)`
