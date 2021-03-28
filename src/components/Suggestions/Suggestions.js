@@ -80,6 +80,7 @@ const ChosenCategory = styled.p`
   text-align: center;
   background: var(--color-rhythm-verylight);
   padding: 5px;
+  margin-top: 160px;
 `
 const ButtonWrapper = styled.div`
   display: flex;
@@ -105,7 +106,8 @@ const AddMoreMovies = styled.div`
   text-align: center;
   border-radius: 8px;
   padding: 25px;
-  margin: 5px 15px 80px 15px;
+  margin: 5px 15px 70px 15px;
+  z-index: 0;
 `
 const AddMoreButton = styled(Button)`
   font-size: var(--font-large);

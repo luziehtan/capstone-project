@@ -48,5 +48,5 @@ const AddMovieButton = styled(Button)`
 `
 
 const CategorySelect = styled.form`
-  margin: 15px;
+  margin: 130px 15px 15px 15px;
 `

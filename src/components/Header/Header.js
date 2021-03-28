@@ -13,9 +13,14 @@ export default function Header({ subtitle }) {
 }
 
 const HeaderWrapper = styled.header`
-  border-radius: 8px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-background);
   padding: 5px;
   margin-bottom: 10px;
+  z-index: 2;
 `
 
 const HeaderLogo = styled.div`

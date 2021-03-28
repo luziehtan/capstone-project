@@ -51,9 +51,6 @@ export default function MainPage({ onFilterMovies, onHandleChange }) {
         <br />
         Choose a food category from the list above and I'll show you some movies
         that will match your plate!
-        <br />
-        <br />
-        (If you just want some random suggestions, simply hit the play button!)
       </Text>
     </>
   )
@@ -63,7 +60,7 @@ const WelcomeText = styled.p`
   font-size: var(--font-large);
   text-align: center;
   padding: 20px;
-  margin: 0 20px;
+  margin: 130px 20px 0 20px;
 `
 
 const FoodSelectWrapper = styled.div`
@@ -101,7 +98,7 @@ const ButtonText = styled.span`
 const Text = styled.div`
   position: absolute;
   bottom: 95px;
-  left: -15px;
+  left: -13px;
   width: 320px;
   font-family: 'Quicksand', sans-serif;
   text-align: center;

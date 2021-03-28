@@ -48,7 +48,7 @@ const FormWrapper = styled.form`
   border: 2px solid var(--color-morningblue);
   border-radius: 8px;
   padding: 15px;
-  margin: 15px;
+  margin: 150px 15px 15px 15px;
 `
 const ButtonWrapper = styled.div`
   text-align: center;
