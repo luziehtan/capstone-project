@@ -39,7 +39,11 @@ export default function App() {
           <MainPage onHandleChange={changeCategory} />
         </Route>
         <Route path="/suggestions">
-          <Suggestions filteredMovies={filteredMovies} movies={movies} />
+          <Suggestions
+            filteredMovies={filteredMovies}
+            movies={movies}
+            category={category}
+          />
         </Route>
         <Route path="/addmovie">
           <Toaster />

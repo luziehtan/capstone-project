@@ -12,12 +12,21 @@ export default function Suggestions({
   borderHeight,
   movies,
   background,
+  category,
 }) {
   const [suggestions, setSuggestions] = useState(movieRandomizer())
 
   return (
     <>
       <Header subtitle={'Try one of these movies and enjoy your meal!'} />
+      <ChosenCategory>Your food category: {category}</ChosenCategory>
+      <MovieList
+        hidden={filteredMovies.length === 0}
+        borderHeight={borderHeight}
+        movies={suggestions}
+        display={'none'}
+        right={'5px'}
+      />
       <ButtonWrapper>
         <AgainButton
           hidden={filteredMovies.length <= 3}
@@ -26,13 +35,6 @@ export default function Suggestions({
           Again!
         </AgainButton>
       </ButtonWrapper>
-      <MovieList
-        hidden={filteredMovies.length === 0}
-        borderHeight={borderHeight}
-        movies={suggestions}
-        display={'none'}
-        right={'5px'}
-      />
       <NoMovies hidden={filteredMovies.length >= 1}>
         {filteredMovies.length === 0 && (
           <TextWrapper>
@@ -73,6 +75,12 @@ export default function Suggestions({
   }
 }
 
+const ChosenCategory = styled.p`
+  font-size: var(--font-large);
+  text-align: center;
+  background: var(--color-rhythm-verylight);
+  padding: 5px;
+`
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -87,7 +95,7 @@ const NoMovies = styled.div`
   background: var(--color-gray);
   border-radius: 8px;
   padding: 25px 5px 5px 5px;
-  margin: 15px;
+  margin: 0 15px;
 `
 const TextWrapper = styled.div`
   margin-bottom: 15px;
@@ -97,7 +105,7 @@ const AddMoreMovies = styled.div`
   text-align: center;
   border-radius: 8px;
   padding: 25px;
-  margin: 15px 15px 110px 15px;
+  margin: 5px 15px 80px 15px;
 `
 const AddMoreButton = styled(Button)`
   font-size: var(--font-large);

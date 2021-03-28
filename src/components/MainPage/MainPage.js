@@ -82,7 +82,7 @@ const PlayButton = styled(Button)`
 `
 const ShowTextButton = styled(Button)`
   position: fixed;
-  bottom: 85px;
+  bottom: 90px;
   left: 10px;
   height: 30px;
   width: 30px;
