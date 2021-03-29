@@ -89,7 +89,7 @@ const ShowTextButton = styled(Button)`
   z-index: 1;
 `
 const ButtonText = styled.span`
-  position: absolute;
+  position: fixed;
   bottom: 94px;
   left: 50px;
   font-family: 'Quicksand', sans-serif;
@@ -99,7 +99,7 @@ const Text = styled.div`
   position: absolute;
   bottom: 95px;
   left: -13px;
-  width: 320px;
+  width: 250px;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
   font-size: var(--font-medium);

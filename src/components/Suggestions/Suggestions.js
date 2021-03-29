@@ -32,7 +32,7 @@ export default function Suggestions({
           hidden={filteredMovies.length <= 3}
           onClick={() => setSuggestions(movieRandomizer())}
         >
-          Again!
+          Randomize the category again!
         </AgainButton>
       </ButtonWrapper>
       <NoMovies hidden={filteredMovies.length >= 1}>
@@ -87,7 +87,7 @@ const ButtonWrapper = styled.div`
   justify-content: center;
 `
 const AgainButton = styled(Button)`
-  width: 30%;
+  width: 50%;
   background: var(--color-yellowgreencrayola);
 `
 const NoMovies = styled.div`
