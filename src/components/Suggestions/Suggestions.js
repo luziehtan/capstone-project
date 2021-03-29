@@ -19,7 +19,9 @@ export default function Suggestions({
   return (
     <>
       <Header subtitle={'Try one of these movies and enjoy your meal!'} />
-      <ChosenCategory>Your food category: {category}</ChosenCategory>
+      <ChosenCategory>
+        Your food category: {category ?? '🎬 not hungry, just bored'}
+      </ChosenCategory>
       <MovieList
         hidden={filteredMovies.length === 0}
         borderHeight={borderHeight}
@@ -32,7 +34,7 @@ export default function Suggestions({
           hidden={filteredMovies.length <= 3}
           onClick={() => setSuggestions(movieRandomizer())}
         >
-          Randomize the category again!
+          Randomize your selection again!
         </AgainButton>
       </ButtonWrapper>
       <NoMovies hidden={filteredMovies.length >= 1}>

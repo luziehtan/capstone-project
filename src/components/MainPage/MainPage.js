@@ -51,6 +51,10 @@ export default function MainPage({ onFilterMovies, onHandleChange }) {
         <br />
         Choose a food category from the list above and I'll show you some movies
         that will match your plate!
+        <br />
+        <br />
+        (If you're just bored and want some movie suggestions, simply hit the
+        play button!)
       </Text>
     </>
   )
