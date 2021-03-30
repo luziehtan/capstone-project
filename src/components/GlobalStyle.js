@@ -27,10 +27,12 @@ body {
   --color-aeroblue: #d5f9de;
   --color-congopink: #fb9488;
   --color-palepink: #fed9d5;
+  
   --color-almostblack: #222;
   --color-darkgray: #bbb;
   --color-gray: #eee;
   --color-white: #fff;
+
   --color-background: #f8f8ff;
 
   --font-extrasmall: 0.6em;
