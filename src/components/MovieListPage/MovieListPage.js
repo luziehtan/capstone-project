@@ -26,8 +26,8 @@ export default function MovieListPage({
         borderHeight={300}
         onHandleDelete={onHandleDelete}
       />
-      <ButtonWrapper className="margin">
-        <AddMovieButton as={Link} to="/addmovie">
+      <ButtonWrapper>
+        <AddMovieButton data-testid="addmoviebutton" as={Link} to="/addmovie">
           Add new movie to your collection
         </AddMovieButton>
       </ButtonWrapper>

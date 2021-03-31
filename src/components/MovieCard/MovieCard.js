@@ -15,7 +15,11 @@ export default function MovieCard({
     <MovieWrapper>
       <MovieTitle>{movieName}</MovieTitle>{' '}
       <FoodCategory right={right}>{movieFoodCategory}</FoodCategory>
-      <DeleteButton display={display} onClick={() => onHandleDelete(movieName)}>
+      <DeleteButton
+        data-testid="deletebutton"
+        display={display}
+        onClick={() => onHandleDelete(movieName)}
+      >
         <ButtonIcon className="gg-trash" />
       </DeleteButton>
     </MovieWrapper>
