@@ -7,3 +7,5 @@ Welcome to **eat'n'watch**, my first (written on my own) app! I had the idea for
 The basic idea is: you enter your food category (cause Spaghetti Bolognese are pretty fine but also hard to connect with movies - so you'll want to choose "Italian") and **eat'n'watch** will give you three random suggestions that should match your food.
 <br/>
 At the moment, all you need to do first, is add your own collection, be it DVDs or your Netflix Watchlist, whatever you'd like to see while munching will be good!
+
+![eatnwatch_luciana_bluemlein](https://user-images.githubusercontent.com/77301202/113119315-99a82e00-9210-11eb-94e0-ef64836751e1.png)
