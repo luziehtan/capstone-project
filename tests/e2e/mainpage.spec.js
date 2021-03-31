@@ -19,4 +19,9 @@ describe('<MainPage/> component', () => {
     cy.visit('/play')
     cy.get('a[name="playbutton"]').click().visit('/suggestions')
   })
+
+  it('should show a text on click', () => {
+    cy.visit('/play')
+    cy.get('button[data-testid="showtextbutton"]').click()
+  })
 })

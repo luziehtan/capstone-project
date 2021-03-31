@@ -37,6 +37,7 @@ export default function MainPage({ onFilterMovies, onHandleChange }) {
       </FoodSelectWrapper>
       <ButtonText>I'm hungry and need some help, please!</ButtonText>
       <ShowTextButton
+        data-testid="showtextbutton"
         title={isVisible ? 'Hide Details' : 'Show Details'}
         onClick={toggleVisible}
       >
