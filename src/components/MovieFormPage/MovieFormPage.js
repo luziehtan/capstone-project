@@ -5,7 +5,7 @@ export default function MovieFormPage({ onAddMovie }) {
   return (
     <>
       <Header subtitle={'Add a new movie to your collection'} />
-      <Form onAddMovie={onAddMovie} showAllMovies={false} />
+      <Form name="movieform" onAddMovie={onAddMovie} showAllMovies={false} />
     </>
   )
 }

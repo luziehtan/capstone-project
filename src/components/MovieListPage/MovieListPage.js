@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom'
 
 export default function MovieListPage({
   onHandleChange,
-  onFilterMovies,
   filteredMovies,
   onHandleDelete,
   category,
@@ -18,7 +17,6 @@ export default function MovieListPage({
       <Header subtitle={'Your movie collection'} />
       <CategorySelect onChange={onHandleChange}>
         <Select
-          foodCategoryValue={onFilterMovies}
           showAllMovies="true"
           optionText={category ?? 'Choose the food category'}
         />
@@ -28,8 +26,8 @@ export default function MovieListPage({
         borderHeight={300}
         onHandleDelete={onHandleDelete}
       />
-      <ButtonWrapper className="margin">
-        <AddMovieButton as={Link} to="/addmovie">
+      <ButtonWrapper>
+        <AddMovieButton data-testid="addmoviebutton" as={Link} to="/addmovie">
           Add new movie to your collection
         </AddMovieButton>
       </ButtonWrapper>
@@ -44,15 +42,11 @@ const ButtonWrapper = styled.div`
 `
 
 const AddMovieButton = styled(Button)`
-  background: #dbf4a7;
-  padding: 12px;
-  text-align: center;
-  font-size: 0.8em;
-  text-decoration: none;
+  font-size: var(--font-medium);
+  background: var(--color-yellowgreencrayola);
   border: 2px solid transparent;
-  width: 100%;
 `
 
 const CategorySelect = styled.form`
-  margin: 15px;
+  margin: 130px 15px 15px 15px;
 `

@@ -13,22 +13,27 @@ export default function Header({ subtitle }) {
 }
 
 const HeaderWrapper = styled.header`
-  border-radius: 8px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-background);
   padding: 5px;
   margin-bottom: 10px;
+  z-index: 2;
 `
 
 const HeaderLogo = styled.div`
   text-align: center;
-  padding: 10px;
   border-radius: 8px;
+  padding: 10px;
 `
 
 const Subtitle = styled.div`
-  text-align: center;
-  font-size: 1em;
   font-family: 'Exo 2', sans-serif;
-  background: rgba(143, 166, 203, 0.3);
+  font-size: var(--font-extralarge);
+  text-align: center;
+  background: var(--color-wildblueyonder-light);
   border-radius: 3px;
   padding: 5px;
   margin: 0 12px;

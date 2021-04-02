@@ -6,20 +6,23 @@ import styled from 'styled-components/macro'
 
 export default function Form({ onAddMovie, foodCategoryValue }) {
   return (
-    <FormWrapper onSubmit={handleSubmit}>
+    <FormWrapper onSubmit={handleSubmit} data-testid="form">
       <Input
         name="movieTitle"
         labelText="Movie:"
         placeholder="Enter a new movie, e.g. 'Memoirs of a Geisha'"
       />
-      <SelectCategory
+      <Select
         returnValue="true"
         foodCategoryValue={foodCategoryValue}
         name="foodCategory"
         labelText="Food Category:"
         optionText={'Choose a matching food category, e.g. Sushi'}
+        data-testId="select"
       />
-      <AddMovieButton>Add movie</AddMovieButton>
+      <ButtonWrapper>
+        <AddMovieButton>Add movie</AddMovieButton>
+      </ButtonWrapper>
     </FormWrapper>
   )
 
@@ -38,22 +41,22 @@ export default function Form({ onAddMovie, foodCategoryValue }) {
 }
 
 const FormWrapper = styled.form`
+  font-family: 'Quicksand', sans-serif;
+  background: var(--color-morningblue-light);
   display: grid;
   gap: 10px;
-  border: 2px solid #8aa399;
-  background: rgba(138, 163, 153, 0.3);
-  padding: 15px;
+  border: 2px solid var(--color-morningblue);
   border-radius: 8px;
-  font-family: 'Quicksand', sans-serif;
-  margin: 15px;
+  padding: 15px;
+  margin: 150px 15px 15px 15px;
+`
+const ButtonWrapper = styled.div`
+  text-align: center;
 `
 
 const AddMovieButton = styled(Button)`
-  background: #dbf4a7;
-  color: black;
+  width: 70%;
+  background: var(--color-yellowgreencrayola);
   border: 2px solid transparent;
-  font-size: 0.8em;
-`
-const SelectCategory = styled(Select)`
-  width: 100%;
+  margin-top: 8px;
 `

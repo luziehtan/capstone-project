@@ -4,7 +4,7 @@ export default function Input({ labelText, placeholder, name }) {
   return (
     <Label>
       {labelText}
-      <LabelInput
+      <InputField
         required
         name={name}
         placeholder={placeholder}
@@ -20,12 +20,12 @@ const Label = styled.label`
   display: grid;
   gap: 5px;
 `
-const LabelInput = styled.input`
-  border: 1px dashed #bbb;
-  border-radius: 8px;
-  margin-top: 8px;
+const InputField = styled.input`
+  font-size: var(--font-small);
   height: 33px;
   outline: none;
+  border: 1px dashed var(--color-darkgray);
+  border-radius: 8px;
   padding-left: 10px;
-  font-size: 0.65em;
+  margin-top: 8px;
 `

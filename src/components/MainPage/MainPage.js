@@ -24,10 +24,11 @@ export default function MainPage({ onFilterMovies, onHandleChange }) {
       <FoodSelectWrapper>
         <FoodSelectForm onChange={onHandleChange} showAllMovies="false">
           <Select
+            name="mainpageselect"
             optionText={'Choose your food category'}
             foodCategoryValue={onFilterMovies}
           />
-          <PlayButton as={Link} to={'/suggestions'}>
+          <PlayButton as={Link} to={'/suggestions'} name="playbutton">
             <center>
               <PlayIcon className="gg-play-button-r" />
             </center>
@@ -36,6 +37,7 @@ export default function MainPage({ onFilterMovies, onHandleChange }) {
       </FoodSelectWrapper>
       <ButtonText>I'm hungry and need some help, please!</ButtonText>
       <ShowTextButton
+        data-testid="showtextbutton"
         title={isVisible ? 'Hide Details' : 'Show Details'}
         onClick={toggleVisible}
       >
@@ -50,66 +52,67 @@ export default function MainPage({ onFilterMovies, onHandleChange }) {
         <br />
         Choose a food category from the list above and I'll show you some movies
         that will match your plate!
+        <br />
+        <br />
+        (If you're just bored and want some movie suggestions, simply hit the
+        play button!)
       </Text>
     </>
   )
 }
 
 const WelcomeText = styled.p`
+  font-size: var(--font-large);
   text-align: center;
   padding: 20px;
-  margin: 0 20px;
-  font-size: 0.9em;
+  margin: 130px 20px 0 20px;
 `
 
 const FoodSelectWrapper = styled.div`
-  position: relative;
-  margin-top: 10px;
   text-align: center;
+  margin-top: 10px;
 `
 const FoodSelectForm = styled.form`
-  position: absolute;
-  left: 35px;
-  width: 80%;
-  border: 2px solid #7d84b2;
+  background: var(--color-rhythm-extremelight);
+  border: 2px solid var(--color-rhythm);
   border-radius: 8px;
   padding: 20px 20px 70px 20px;
-  background: rgba(125, 132, 178, 0.1);
+  margin: 0 30px;
 `
 const PlayButton = styled(Button)`
   background: transparent;
 `
 const ShowTextButton = styled(Button)`
   position: fixed;
-  bottom: 85px;
+  bottom: 90px;
   left: 10px;
-  background: #d5f9de;
-  border: 1px dashed black;
   height: 30px;
   width: 30px;
+  background: var(--color-aeroblue);
+  border: 1px dashed black;
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
 `
 const ButtonText = styled.span`
-  position: absolute;
+  position: fixed;
   bottom: 94px;
   left: 50px;
   font-family: 'Quicksand', sans-serif;
-  font-size: 0.6em;
+  font-size: var(--font-extrasmall);
 `
 const Text = styled.div`
   position: absolute;
   bottom: 95px;
-  left: -15px;
+  left: -13px;
+  width: 250px;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
-  font-size: 0.9em;
-  background: #d5f9de;
+  font-size: var(--font-medium);
+  background: var(--color-aeroblue);
+  border: 1px solid var(--color-morningblue);
+  border-radius: 8px;
   padding: 20px;
   margin: 0 40px;
-  border: 1px solid #8aa399;
-  border-radius: 8px;
-  width: 320px;
 `
 const BotIcon = styled.div`
   &.gg-bot {
@@ -130,21 +133,21 @@ const BotIcon = styled.div`
   &.gg-bot::after,
   .gg-bot::before {
     content: '';
-    display: block;
     box-sizing: border-box;
     position: absolute;
+    top: 3px;
+    display: block;
     width: 2px;
     height: 2px;
     box-shadow: 0 0 0 2px;
-    top: 3px;
   }
   &.gg-bot::before {
     left: -4px;
     border-radius: 3px;
   }
   &.gg-bot::after {
-    border-radius: 100px;
     right: -4px;
+    border-radius: 100px;
   }
 `
 const PlayIcon = styled.div`
@@ -156,34 +159,34 @@ const PlayIcon = styled.div`
     transform: scale(var(--ggs, 4));
     width: 22px;
     height: 22px;
-    border: 1px solid #dbf4a7;
+    background: var(--color-white);
+    border: 1px solid var(--color-yellowgreencrayola);
     border-radius: 4px;
-    background: white;
   }
   &.gg-play-button-r::after {
     content: '';
-    color: #7d84b2;
-    display: block;
     box-sizing: border-box;
     position: absolute;
+    top: 5px;
+    left: 8px;
+    display: block;
     width: 0;
     height: 10px;
+    color: var(--color-rhythm);
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
     border-left: 6px solid;
-    top: 5px;
-    left: 8px;
   }
   &.gg-play-button-r::before {
     box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
     display: block;
     transform: scale(var(--ggs, 0.9));
     width: 20px;
     height: 20px;
-    border: 1px solid #8fa6cb;
+    border: 1px solid var(--color-wildblueyonder);
     border-radius: 50px;
-    position: absolute;
-    top: 0;
-    left: 0;
   }
 `

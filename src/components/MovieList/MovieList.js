@@ -41,25 +41,25 @@ export default function MovieList({
 }
 
 export const MovieBorder = styled.div`
-  border: 2px solid #7d84b2;
+  position: relative;
+  overflow-y: scroll;
+  height: ${props => (props.borderHeight ? '300px' : '')};
+  text-align: ${props => (props.textAlign ? 'left' : '')};
+  background: ${props => (props.background ? '' : 'var(--color-background)')};
+  border: 2px solid var(--color-rhythm);
   border-radius: 8px;
   margin: ${props => (props.margin ? '' : '15px')};
-  height: ${props => (props.borderHeight ? '300px' : '')};
-  overflow-y: scroll;
-  position: relative;
-  text-align: ${props => (props.textAlign ? 'left' : '')};
-  background: ${props => (props.background ? '' : '#F8F8FF')};
 
   &:empty:not(:focus):before {
     content: attr(data-text);
+    position: absolute;
+    top: 70px;
     font-family: 'Quicksand', sans-serif;
-    font-size: 0.9em;
-    background: #eee;
+    font-size: var(--font-medium);
+    text-align: center;
+    background: var(--color-gray);
     border-radius: 8px;
     padding: 20px;
-    position: absolute;
-    text-align: center;
-    top: 70px;
     margin: 30px;
   }
 `

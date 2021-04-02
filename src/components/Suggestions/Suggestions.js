@@ -12,20 +12,16 @@ export default function Suggestions({
   borderHeight,
   movies,
   background,
+  category,
 }) {
   const [suggestions, setSuggestions] = useState(movieRandomizer())
 
   return (
     <>
       <Header subtitle={'Try one of these movies and enjoy your meal!'} />
-      <ButtonWrapper>
-        <AgainButton
-          hidden={filteredMovies.length <= 3}
-          onClick={() => setSuggestions(movieRandomizer())}
-        >
-          Again!
-        </AgainButton>
-      </ButtonWrapper>
+      <ChosenCategory>
+        Your food category: {category ?? '🎬 not hungry, just bored'}
+      </ChosenCategory>
       <MovieList
         hidden={filteredMovies.length === 0}
         borderHeight={borderHeight}
@@ -33,6 +29,14 @@ export default function Suggestions({
         display={'none'}
         right={'5px'}
       />
+      <ButtonWrapper>
+        <AgainButton
+          hidden={filteredMovies.length <= 3}
+          onClick={() => setSuggestions(movieRandomizer())}
+        >
+          Randomize your selection again!
+        </AgainButton>
+      </ButtonWrapper>
       <NoMovies hidden={filteredMovies.length >= 1}>
         {filteredMovies.length === 0 && (
           <TextWrapper>
@@ -46,7 +50,7 @@ export default function Suggestions({
           background={background}
           movies={randomizeAll()}
           display={'none'}
-          right={'5x'}
+          right={'5px'}
         />
       </NoMovies>
       <AddMoreMovies hidden={filteredMovies.length > 3}>
@@ -73,38 +77,43 @@ export default function Suggestions({
   }
 }
 
+const ChosenCategory = styled.p`
+  font-size: var(--font-large);
+  text-align: center;
+  background: var(--color-rhythm-verylight);
+  padding: 5px;
+  margin-top: 160px;
+`
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 100%;
 `
 const AgainButton = styled(Button)`
-  font-size: 0.8em;
-  background: #dbf4a7;
   width: 50%;
+  background: var(--color-yellowgreencrayola);
 `
 const NoMovies = styled.div`
+  font-size: var(--font-large);
   text-align: center;
-  font-size: 0.9em;
-  background: #eee;
-  padding: 25px 5px 5px 5px;
-  margin: 15px;
+  background: var(--color-gray);
   border-radius: 8px;
+  padding: 25px 5px 5px 5px;
+  margin: 0 15px;
 `
 const TextWrapper = styled.div`
   margin-bottom: 15px;
 `
 const AddMoreMovies = styled.div`
+  font-size: var(--font-large);
+  text-align: center;
   border-radius: 8px;
   padding: 25px;
-  margin: 15px;
-  text-align: center;
-  font-size: 0.9em;
-  margin-bottom: 110px;
+  margin: 5px 15px 70px 15px;
+  z-index: 0;
 `
 const AddMoreButton = styled(Button)`
-  font-size: 0.9em;
-  background: #dbf4a7;
+  font-size: var(--font-large);
   width: 50%;
+  background: var(--color-yellowgreencrayola);
   margin-top: 20px;
 `
