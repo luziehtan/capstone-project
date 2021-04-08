@@ -1,3 +1,5 @@
+import {useEffect} from 'react'
+
 import styled from 'styled-components/macro'
 
 import Button from '../Button/Button'
@@ -10,7 +12,24 @@ export default function MovieCard({
   movieFoodCategory,
   display,
   right,
-}) {
+})
+
+{
+ const {REACT_APP_TMDB_API_KEY} = process.env
+  const MOVIE_API = `https://api.themoviedb.org/3/search/movie?api_key=${REACT_APP_TMDB_API_KEY}&query=${movieName}`
+
+  useEffect(() => {
+    fetch(MOVIE_API)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+      })
+      .catch(error => {
+        throw error
+      })
+  }, [MOVIE_API])
+
+
   return (
     <MovieWrapper>
       <MovieTitle>{movieName}</MovieTitle>{' '}
