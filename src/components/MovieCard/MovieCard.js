@@ -21,6 +21,8 @@ export default function MovieCard({
   const MOVIE_API_OVERVIEW = `https://api.themoviedb.org/3/search/movie?api_key=${REACT_APP_TMDB_API_KEY}&query=${movieName}`
   const [overview, setOverview] = useState('')
 
+  const [isTextVisible, setIsTextVisible] = useState(false)
+
   useEffect(() => {
     fetch(MOVIE_API_OVERVIEW)
       .then(res => res.json())
@@ -35,8 +37,11 @@ export default function MovieCard({
 
 
   return (
+    <>
     <MovieWrapper>
-      <DetailsButton>
+      <DetailsButton
+      data-testide="detailsbutton"
+      onClick={() => setIsTextVisible(!isTextVisible)}>
         <DetailsIcon className="gg-comment" />
       </DetailsButton>
       <MovieTitle>{movieName}</MovieTitle>{' '}
@@ -49,6 +54,8 @@ export default function MovieCard({
         <ButtonIcon className="gg-trash" />
       </DeleteButton>
     </MovieWrapper>
+    <DetailsText hidden={!isTextVisible}>{overview}</DetailsText>
+    </>
   )
 }
 
@@ -163,4 +170,12 @@ const DetailsIcon = styled.div`
   left: 4px;
   top: 5px
 }
+`
+const DetailsText = styled.p`
+box-sizing: border-box;
+text-align: left;
+border-radius: 8px;
+padding: 10px;
+margin: 5px;
+background: var(--color-rhythm-extremelight);
 `
