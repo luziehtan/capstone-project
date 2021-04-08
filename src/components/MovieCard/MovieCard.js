@@ -95,8 +95,8 @@ const DeleteButton = styled(Button)`
   background: transparent;
 `
 const DetailsButton = styled(Button)`
-position: relative;
-left: -20px;
+  position: relative;
+  left: -20px;
   bottom: 10px;
   background: transparent;
   `
@@ -142,6 +142,7 @@ const ButtonIcon = styled.div`
   }
 `
 const DetailsIcon = styled.div`
+color: var(--color-darkbluegray);
 &.gg-comment {
   box-sizing: border-box;
   position: absolute;
@@ -174,6 +175,7 @@ const DetailsIcon = styled.div`
 const DetailsText = styled.p`
 box-sizing: border-box;
 text-align: left;
+font-size: var(--font-large);
 border-radius: 8px;
 padding: 10px;
 margin: 5px;
