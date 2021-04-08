@@ -71,10 +71,10 @@ const MovieWrapper = styled.section`
   margin: 5px;
 `
 const MovieTitle = styled.span`
-position: absolute;
-left: 40px;
+  position: absolute;
+  left: 35px;
   word-wrap: break-word;
-  width: 170px;
+  width: 165px;
 `
 const FoodCategory = styled.span`
   position: absolute;
