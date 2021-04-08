@@ -1,10 +1,11 @@
-import {useEffect} from 'react'
+import {useState, useEffect} from 'react'
 
 import styled from 'styled-components/macro'
 
 import Button from '../Button/Button'
 
 import 'css.gg/icons/css/film.css'
+import 'css.gg/icons/css/play-button-r.css'
 
 export default function MovieCard({
   onHandleDelete,
@@ -15,23 +16,29 @@ export default function MovieCard({
 })
 
 {
- const {REACT_APP_TMDB_API_KEY} = process.env
-  const MOVIE_API = `https://api.themoviedb.org/3/search/movie?api_key=${REACT_APP_TMDB_API_KEY}&query=${movieName}`
+
+  const {REACT_APP_TMDB_API_KEY} = process.env
+  const MOVIE_API_OVERVIEW = `https://api.themoviedb.org/3/search/movie?api_key=${REACT_APP_TMDB_API_KEY}&query=${movieName}`
+  const [overview, setOverview] = useState('')
 
   useEffect(() => {
-    fetch(MOVIE_API)
+    fetch(MOVIE_API_OVERVIEW)
       .then(res => res.json())
       .then(data => {
-        console.log(data)
+        // console.log(data.results[0].overview)
+        setOverview([data.results[0].overview])
       })
       .catch(error => {
         throw error
       })
-  }, [MOVIE_API])
+  }, [MOVIE_API_OVERVIEW])
 
 
   return (
     <MovieWrapper>
+      <DetailsButton>
+        <DetailsIcon className="gg-comment" />
+      </DetailsButton>
       <MovieTitle>{movieName}</MovieTitle>{' '}
       <FoodCategory right={right}>{movieFoodCategory}</FoodCategory>
       <DeleteButton
@@ -57,6 +64,8 @@ const MovieWrapper = styled.section`
   margin: 5px;
 `
 const MovieTitle = styled.span`
+position: absolute;
+left: 40px;
   word-wrap: break-word;
   width: 170px;
 `
@@ -78,6 +87,12 @@ const DeleteButton = styled(Button)`
   width: 10%;
   background: transparent;
 `
+const DetailsButton = styled(Button)`
+position: relative;
+left: -20px;
+  bottom: 10px;
+  background: transparent;
+  `
 const ButtonIcon = styled.div`
   &.gg-trash {
     box-sizing: border-box;
@@ -118,4 +133,34 @@ const ButtonIcon = styled.div`
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
   }
+`
+const DetailsIcon = styled.div`
+&.gg-comment {
+  box-sizing: border-box;
+  position: absolute;
+  display: block;
+  transform: scale(var(--ggs, 1));
+  width: 20px;
+  height: 20px;
+  border: 2px solid;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+&.gg-comment::after,
+&.gg-comment::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 8px
+}
+&.gg-comment::after {
+  height: 2px;
+  background: currentColor;
+  box-shadow: 0 4px 0 0;
+  left: 4px;
+  top: 5px
+}
 `
