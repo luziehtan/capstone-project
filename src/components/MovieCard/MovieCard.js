@@ -18,22 +18,23 @@ export default function MovieCard({
 {
 
   const {REACT_APP_TMDB_API_KEY} = process.env
-  const MOVIE_API_OVERVIEW = `https://api.themoviedb.org/3/search/movie?api_key=${REACT_APP_TMDB_API_KEY}&query=${movieName}`
+  const MOVIE_API = `https://api.themoviedb.org/3/search/movie?api_key=${REACT_APP_TMDB_API_KEY}&query=${movieName}`
   const [overview, setOverview] = useState('')
+
+  const {IMG_API} = 'https://image.tmdb.org/t/p/w100'
 
   const [isTextVisible, setIsTextVisible] = useState(false)
 
   useEffect(() => {
-    fetch(MOVIE_API_OVERVIEW)
+    fetch(MOVIE_API)
       .then(res => res.json())
       .then(data => {
-        // console.log(data.results[0].overview)
         setOverview([data.results[0].overview])
       })
       .catch(error => {
         throw error
       })
-  }, [MOVIE_API_OVERVIEW])
+  }, [MOVIE_API])
 
 
   return (
@@ -54,7 +55,10 @@ export default function MovieCard({
         <ButtonIcon className="gg-trash" />
       </DeleteButton>
     </MovieWrapper>
-    <DetailsText hidden={!isTextVisible}>{overview}</DetailsText>
+    <DetailsText hidden={!isTextVisible}>
+    <Poster src={`${IMG_API}`} alt="" />
+    {overview}
+    </DetailsText>
     </>
   )
 }
@@ -99,13 +103,14 @@ const DetailsButton = styled(Button)`
   left: -20px;
   bottom: 10px;
   background: transparent;
+  width: 10%;
   `
 const ButtonIcon = styled.div`
   &.gg-trash {
     box-sizing: border-box;
     position: absolute;
     right: 10px;
-    bottom: 2px;
+    bottom: 4px;
     transform: scale(var(--ggs, 1));
     width: 10px;
     height: 12px;
@@ -142,7 +147,7 @@ const ButtonIcon = styled.div`
   }
 `
 const DetailsIcon = styled.div`
-color: var(--color-darkbluegray);
+color: var(--color-rhythm);
 &.gg-comment {
   box-sizing: border-box;
   position: absolute;
@@ -171,6 +176,9 @@ color: var(--color-darkbluegray);
   left: 4px;
   top: 5px
 }
+`
+const Poster = styled.img`
+border-radius: 8px;
 `
 const DetailsText = styled.p`
 box-sizing: border-box;
