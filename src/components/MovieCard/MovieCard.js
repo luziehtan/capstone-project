@@ -20,8 +20,9 @@ export default function MovieCard({
   const {REACT_APP_TMDB_API_KEY} = process.env
   const MOVIE_API = `https://api.themoviedb.org/3/search/movie?api_key=${REACT_APP_TMDB_API_KEY}&query=${movieName}`
   const [overview, setOverview] = useState('')
+  const [image, setImage] = useState('')
 
-  const {IMG_API} = 'https://image.tmdb.org/t/p/w100'
+  const IMG_API = 'https://image.tmdb.org/t/p/w92'
 
   const [isTextVisible, setIsTextVisible] = useState(false)
 
@@ -30,6 +31,7 @@ export default function MovieCard({
       .then(res => res.json())
       .then(data => {
         setOverview([data.results[0].overview])
+        setImage([data.results[0].poster_path])
       })
       .catch(error => {
         throw error
@@ -55,10 +57,12 @@ export default function MovieCard({
         <ButtonIcon className="gg-trash" />
       </DeleteButton>
     </MovieWrapper>
-    <DetailsText hidden={!isTextVisible}>
-    <Poster src={`${IMG_API}`} alt="" />
+    <DetailsWrapper hidden={!isTextVisible}>
+    <DetailsText>
+    <Poster src={`${IMG_API}${image}`} alt="" />
     {overview}
     </DetailsText>
+    </DetailsWrapper>
     </>
   )
 }
@@ -177,15 +181,23 @@ color: var(--color-rhythm);
   top: 5px
 }
 `
+const DetailsWrapper = styled.div`
+
+`
 const Poster = styled.img`
 border-radius: 8px;
+float: left;
+margin-right: 18px;
+
 `
 const DetailsText = styled.p`
+display: inline-block;
 box-sizing: border-box;
-text-align: left;
 font-size: var(--font-large);
 border-radius: 8px;
-padding: 10px;
+padding: 15px;
 margin: 5px;
 background: var(--color-rhythm-extremelight);
+height: auto;
+text-align: justify;
 `
