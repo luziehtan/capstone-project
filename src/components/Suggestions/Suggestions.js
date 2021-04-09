@@ -91,6 +91,7 @@ const ButtonWrapper = styled.div`
 const AgainButton = styled(Button)`
   width: 50%;
   background: var(--color-yellowgreencrayola);
+  margin-bottom: 80px;
 `
 const NoMovies = styled.div`
   font-size: var(--font-large);

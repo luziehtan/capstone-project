@@ -19,6 +19,7 @@ export default function MovieCard({
 
   const {REACT_APP_TMDB_API_KEY} = process.env
   const MOVIE_API = `https://api.themoviedb.org/3/search/movie?api_key=${REACT_APP_TMDB_API_KEY}&query=${movieName}`
+
   const [overview, setOverview] = useState('')
   const [image, setImage] = useState('')
 
@@ -182,7 +183,6 @@ color: var(--color-rhythm);
 }
 `
 const DetailsWrapper = styled.div`
-
 `
 const Poster = styled.img`
 border-radius: 8px;
