@@ -109,6 +109,7 @@ const DetailsButton = styled(Button)`
   bottom: 10px;
   background: transparent;
   width: 10%;
+  border: 1px solid transparent;
   `
 const ButtonIcon = styled.div`
   &.gg-trash {

@@ -43,7 +43,7 @@ export default function MovieList({
 export const MovieBorder = styled.div`
   position: relative;
   overflow-y: scroll;
-  height: ${props => (props.borderHeight ? '300px' : '')};
+  height: ${props => (props.borderHeight ? '253px' : '')};
   text-align: ${props => (props.textAlign ? 'left' : '')};
   background: ${props => (props.background ? '' : 'var(--color-background)')};
   border: 2px solid var(--color-rhythm);
