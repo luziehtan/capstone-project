@@ -14,7 +14,7 @@ export default function MovieListPage({
   category,
   userInput,
   setUserInput,
-  text
+  text,
 }) {
 
   return (
@@ -26,12 +26,10 @@ export default function MovieListPage({
           optionText={category ?? 'Choose the food category'}
         />
       </CategorySelect>
-      <SearchWrapper>
       <SearchMovie
-      userInput={userInput}
-      setUserInput={setUserInput}
-      text={'Search for movie'}/>
-      </SearchWrapper>
+    userInput={userInput}
+    setUserInput={setUserInput}
+    text={'Search for movie'}/>
       <MovieList
         movies={filteredMovies}
         borderHeight={300}
@@ -50,11 +48,6 @@ const ButtonWrapper = styled.div`
   text-align: center;
   margin-top: 35px;
   margin-bottom: 110px;
-`
-
-const SearchWrapper = styled.div`
-text-align: center;
-margin: 0 15px;
 `
 
 const AddMovieButton = styled(Button)`

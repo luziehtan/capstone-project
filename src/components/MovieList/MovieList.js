@@ -16,6 +16,7 @@ export default function MovieList({
   right,
 }) {
   return (
+    <>
     <MovieBorder
       textAlign={textAlign}
       margin={margin}
@@ -37,6 +38,7 @@ export default function MovieList({
           />
         ))}
     </MovieBorder>
+    </>
   )
 }
 
@@ -53,7 +55,7 @@ export const MovieBorder = styled.div`
   &:empty:not(:focus):before {
     content: attr(data-text);
     position: absolute;
-    top: 70px;
+    top: 50px;
     font-family: 'Quicksand', sans-serif;
     font-size: var(--font-medium);
     text-align: center;
