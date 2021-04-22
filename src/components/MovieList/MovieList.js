@@ -14,7 +14,9 @@ export default function MovieList({
   onHandleDelete,
   display,
   right,
+  userInput
 }) {
+
   return (
     <>
     <MovieBorder
@@ -27,6 +29,7 @@ export default function MovieList({
     >
       {movies
         .sort((a, b) => a.movieTitle > b.movieTitle)
+        .filter(movie => movie.movieTitle.toLowerCase().includes(userInput.toLowerCase()))
         .map(movie => (
           <MovieCard
             key={movie.movieTitle}

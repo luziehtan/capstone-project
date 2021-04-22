@@ -13,6 +13,7 @@ export default function Suggestions({
   movies,
   background,
   category,
+  userInput
 }) {
   const [suggestions, setSuggestions] = useState(movieRandomizer())
 

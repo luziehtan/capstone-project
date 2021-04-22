@@ -2,8 +2,9 @@ import MovieList from '../MovieList/MovieList'
 import Header from '../Header/Header'
 import Button from '../Button/Button'
 import Select from '../Select/Select'
-import SearchMovie from '../SearchMovie/SearchMovie'
 import styled from 'styled-components/macro'
+
+import { useState } from 'react'
 
 import { Link } from 'react-router-dom'
 
@@ -12,10 +13,9 @@ export default function MovieListPage({
   filteredMovies,
   onHandleDelete,
   category,
-  userInput,
-  setUserInput,
-  text,
 }) {
+
+  const [userInput, setUserInput] = useState('')
 
   return (
     <>
@@ -26,11 +26,17 @@ export default function MovieListPage({
           optionText={category ?? 'Choose the food category'}
         />
       </CategorySelect>
-      <SearchMovie
-    userInput={userInput}
-    setUserInput={setUserInput}
-    text={'Search for movie'}/>
+      <SearchInput
+        value={userInput}
+        name="searchinput"
+        onChange={event => setUserInput(event.target.value)}
+        placeholder="Search for movie"
+      />
+      <DeleteInput onClick={() => setUserInput('')}>
+          X
+      </DeleteInput>
       <MovieList
+        userInput={userInput}
         movies={filteredMovies}
         borderHeight={300}
         onHandleDelete={onHandleDelete}
@@ -58,4 +64,23 @@ const AddMovieButton = styled(Button)`
 
 const CategorySelect = styled.form`
   margin: 130px 15px 15px 15px;
+`
+
+const SearchInput = styled.input`
+  position: relative;
+  font-size: var(--font-small);
+  height: 33px;
+  width: 150px;
+  outline: none;
+  border: 1px dashed var(--color-darkgray);
+  border-radius: 8px;
+  padding-left: 10px;
+  margin-left: 15px;
+`
+const DeleteInput = styled.div`
+  font-size: 13px;
+  position: absolute;
+  top: 195px;
+  left: 148px;
+  cursor: pointer;
 `
