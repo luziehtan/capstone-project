@@ -13,6 +13,7 @@ export default function Suggestions({
   movies,
   background,
   category,
+  userInput
 }) {
   const [suggestions, setSuggestions] = useState(movieRandomizer())
 
@@ -23,6 +24,7 @@ export default function Suggestions({
         Your food category: {category ?? '🎬 not hungry, just bored'}
       </ChosenCategory>
       <MovieList
+        userInput=""
         hidden={filteredMovies.length === 0}
         borderHeight={borderHeight}
         movies={suggestions}
@@ -45,6 +47,7 @@ export default function Suggestions({
           </TextWrapper>
         )}
         <MovieList
+          userInput=""
           margin={'0'}
           textAlign={'left'}
           background={background}
@@ -91,6 +94,7 @@ const ButtonWrapper = styled.div`
 const AgainButton = styled(Button)`
   width: 50%;
   background: var(--color-yellowgreencrayola);
+  margin-bottom: 80px;
 `
 const NoMovies = styled.div`
   font-size: var(--font-large);

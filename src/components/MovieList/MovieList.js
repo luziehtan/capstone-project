@@ -14,8 +14,11 @@ export default function MovieList({
   onHandleDelete,
   display,
   right,
+  userInput
 }) {
+
   return (
+    <>
     <MovieBorder
       textAlign={textAlign}
       margin={margin}
@@ -26,6 +29,7 @@ export default function MovieList({
     >
       {movies
         .sort((a, b) => a.movieTitle > b.movieTitle)
+        .filter(movie => movie.movieTitle.toLowerCase().includes(userInput.toLowerCase()))
         .map(movie => (
           <MovieCard
             key={movie.movieTitle}
@@ -37,13 +41,14 @@ export default function MovieList({
           />
         ))}
     </MovieBorder>
+    </>
   )
 }
 
 export const MovieBorder = styled.div`
   position: relative;
   overflow-y: scroll;
-  height: ${props => (props.borderHeight ? '300px' : '')};
+  height: ${props => (props.borderHeight ? '253px' : '')};
   text-align: ${props => (props.textAlign ? 'left' : '')};
   background: ${props => (props.background ? '' : 'var(--color-background)')};
   border: 2px solid var(--color-rhythm);
@@ -53,7 +58,7 @@ export const MovieBorder = styled.div`
   &:empty:not(:focus):before {
     content: attr(data-text);
     position: absolute;
-    top: 70px;
+    top: 50px;
     font-family: 'Quicksand', sans-serif;
     font-size: var(--font-medium);
     text-align: center;
