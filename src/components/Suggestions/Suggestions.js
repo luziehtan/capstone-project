@@ -24,6 +24,7 @@ export default function Suggestions({
         Your food category: {category ?? '🎬 not hungry, just bored'}
       </ChosenCategory>
       <MovieList
+        userInput=""
         hidden={filteredMovies.length === 0}
         borderHeight={borderHeight}
         movies={suggestions}
@@ -46,6 +47,7 @@ export default function Suggestions({
           </TextWrapper>
         )}
         <MovieList
+          userInput=""
           margin={'0'}
           textAlign={'left'}
           background={background}
