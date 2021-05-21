@@ -20,6 +20,7 @@ export default function Select({ labelText, optionText, name, showAllMovies }) {
     { label: 'Russian', value: 'Russian' },
     { label: 'Sushi', value: 'Sushi' },
     { label: 'Swiss', value: 'Swiss' },
+    { label: 'Turkish', value: 'Turkish'},
   ]
 
   return (
